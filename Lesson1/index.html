@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <article class="card" style="width: 350px;">
+        <div class="card__thumb">
+          <img src="https://s3.eu-central-1.amazonaws.com/ishadeed.com/brownies.jpg" alt="">
+        </div>
+        <div class="card__content">
+          <h2><a href="#">Card title</a></h2>
+          <p>Some desc will go here and I need it to wrap into lines</p>
+        </div>
+        <span class="card__tag">Tag</span>
+      </article>
+
+
+      <div class="hero">
+        <div class="hero__content">
+          <h2>Best Brownies in Town</h2>
+          <p>High quality ingredients and best in-class chef</p>
+          <a href="#">Order now</a>
+        </div>
+        <img src="https://s3.eu-central-1.amazonaws.com/ishadeed.com/brownies.jpg" alt="">
+      </div>
+
+      <div class="hero">
+        <div class="hero__content">
+          <h2 class="hero__title">This is a title</h2>
+          <p class="hero__desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit..</p>
+          <a class="hero__cta" href="#">Order now</a>
+        </div>
+        <img class="hero__thumb" src="https://s3.eu-central-1.amazonaws.com/ishadeed.com/brownies.jpg" alt="">
+      </div>
+
+
+      <article class="card">
+        <img src="https://s3.eu-central-1.amazonaws.com/ishadeed.com/brownies.jpg" alt="">
+        <div class="card__content">
+            <h3>Title</h3>
+            <p>Description</p>
+            <p>Actions</p>
+        </div>
+    </article>
+
+
+    <h1 class="box"></h1>
+
+
+    <input class="inn" type="number" name="" id="" >
+    <button>Go</button>
+    
+    <script>
+let firstName = 'Alex';
+let secondName = 'Ivanov';
+const age = 34;
+
+let text = "";
+for (let i = 0; i < 7; i++) {
+  text += i+1 + " ";
+}
+console.log(text);
+
+
+let txt = "";
+let person = {fname:"Щипунов", lname:"Андрей", age:25}; 
+for (let x in person) {
+  txt += person[x] + " ";
+}
+
+console.log(txt);
+console.log(typeof txt);
+
+// var years = prompt('Сколько вам лет?', 100);
+// alert('Вам ' + years + ' лет!')
+
+let a=prompt('Введите ваше имя');
+let b=prompt('Введите ваш возраст'); 
+alert('Здраствуйте, '+(a)+', вам '+(b)+' лет');
+
+console.log(`Привет ${firstName}.
+Тебе ${age} лет`);
+
+
+let inputInn = document.querySelector ('.inn');
+let button = document.querySelector ('button');
+
+button.onclick = function () {
+  console.log(typeof inputInn.value);
+
+  let b = parseInt(inputInn.value);
+  console.log (inputInn.value);
+  console.log (typeof inputInn.value);
+  // let c =(b + + '3' - 3);
+  // console.log (c);
+  console.log (b)
+  console.log (typeof b)
+
+}
+    </script>
+</body>
+</html>
