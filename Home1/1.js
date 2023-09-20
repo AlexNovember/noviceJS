@@ -14,8 +14,8 @@
 */
 
 
-let degreesCelsius = prompt('Введите температуру °C :', 'Введите цифры');
-degreesCelsius = degreesCelsius.replace(/[^\d.]/ig, ''); //если случайно не убрали надпись введите цифры, оставляем только цифры
-const degreesFahrenheit = ((9 / 5) * degreesCelsius + 32);
+const degreesCelsius = prompt('Введите температуру °C :', 'Введите цифры');
+const degreesCelsiusEdit = degreesCelsius.replace(/[^\d.]/ig, ''); //если случайно не убрали надпись введите цифры, оставляем только цифры
+const degreesFahrenheit = ((9 / 5) * degreesCelsiusEdit + 32);
 // let degreesFahrenheit = Math.round((9 / 5) * degreesCelsius + 32);
-alert(`Цельсий: {C}: ${degreesCelsius}  Фаренгейт: {F}: ${(degreesFahrenheit).toFixed(1)*10/10}`);
+alert(`Цельсий: {C}: ${degreesCelsiusEdit}  Фаренгейт: {F}: ${(degreesFahrenheit).toFixed(1)*10/10}`);
