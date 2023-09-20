@@ -13,7 +13,6 @@
 Уточнение: пользователь всегда вводит корректное число.
 */
 
-
 const degreesCelsius = prompt('Введите температуру °C :', 'Введите цифры');
 const degreesCelsiusEdit = degreesCelsius.replace(/[^\d.]/ig, ''); //если случайно не убрали надпись введите цифры, оставляем только цифры
 const degreesFahrenheit = ((9 / 5) * degreesCelsiusEdit + 32);
