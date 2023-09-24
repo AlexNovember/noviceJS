@@ -25,9 +25,9 @@
 
 const number = +prompt("Введите число:");
 console.log(number);
-const hundreds = Math.trunc((number / 100) % 10);
+const hundreds = Math.trunc((number % 1000) / 100);
 console.log(hundreds);
-const dozens = Math.trunc((number / 10) % 10);
+const dozens = Math.trunc((number % 100) / 10);
 console.log(dozens);
 const pieces = Math.trunc(number % 10);
 console.log(pieces);
