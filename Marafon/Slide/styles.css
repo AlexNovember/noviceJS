@@ -4,17 +4,14 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-size: 8px;
 }
 
 body {
   font-family: 'Muli', sans-serif;
   overflow: hidden;
   margin: 0;
-  /* background-color: black; */
-  background-image: url(https://img.freepik.com/free-vector/seamless-gold-rhombus-grid-pattern-on-black-background_53876-97589.jpg?w=996&t=st=1695543909~exp=1695544509~hmac=b1b7606c19a50b30f8a1e098a34d7ea7dc272e3052e569d6bc1d161261e56d90);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: black;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -43,10 +40,11 @@ body {
 
 .slide h3 {
   position: absolute;
-  font-size: 24px;
+  font-size: 0.5rem;
   bottom: 20px;
   left: 20px;
-  opacity: 0;
+  text-wrap: nowrap;
+  /* opacity: 0; */
 }
 
 .slide.active {
@@ -54,6 +52,8 @@ body {
 }
 
 .slide.active h3 {
-  opacity: 1;
-  transition: opacity 0.3s ease-in 0.4s;
+  font-size: 4rem;
+  text-wrap: nowrap;
+  /* opacity: 1; */
+  transition: 0.1s ease-in 0.4s;
 }

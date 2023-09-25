@@ -125,3 +125,23 @@
 // }
 
 // a1();
+
+// const date = new Date();
+// const time = new Date().getHours();
+
+// const userName = prompt("Введите имя: ");
+
+// dayTime(userName, time);
+
+// function dayTime(userName, time) {
+//   if (time > 6 && time < 12) {
+//     console.log(`Доброе утро ${userName}`);
+//   } else if (time > 12 && time < 18) {
+//     console.log(`Добрый день ${userName}`);
+//   } else if (time > 18 && time < 24) {
+//     console.log(`Добрый вечер ${userName}`);
+//   } else {
+//     console.log(`Доброй ночиь ${userName}`);
+//   }
+//   console.log(`Сейчас ${date.toLocaleTimeString()}`);
+// }
