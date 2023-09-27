@@ -11,7 +11,7 @@ function cubeResult(num) {
   console.log(`Передали в функцию число ${num}`);
   num = num ** 3;
   //   num = Math.pow(num, 3); // также можно использовать функцию Math.pow
-  console.log(`Результат возведения ${num}`);
+  console.log(`Результат возведения в куб ${num}`);
   return num;
 }
 
