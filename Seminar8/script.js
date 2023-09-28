@@ -109,10 +109,55 @@
 // }
 // console.log(sum);
 
+// Подсчет суммы с помощью reduce
+
+// const arr1 = [2, 5, 9, 3, 1, 4];
+// const initialValue = 0;
+// const sumWithInitial = arr1.reduce(
+//   (accumulator, currentValue) => accumulator + currentValue,
+//   initialValue
+// );
+// console.log(sumWithInitial);
+
 // let str = "";
 // for (let i = 1; i < 10; i++) {
 //   str += `-${i}`;
 // }
 // console.log(`${str}-`);
 
-const arr = [2, 5, 9, 0, 3, 1, 4];
+// const arr = [2, 5, 9, 7, 0, 1, 6];
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] == 0) {
+//     break;
+//   }
+//   console.log(arr[i]);
+// }
+
+// 1. Пусть у нас дан массив состоящий из 10 элементов с произвольными числами. Давайте переберем его циклом и числа, которые делятся на 2, возведем в квадрат и выведем в консоль, а числа, которые делятся на 3, возведем в куб и выведем в консоль.
+// 2. С помощью двух вложенных циклов выведите на экран следующую строку:
+// 3. Дан массив const arr = [1, 2, 3, 2, 4, 3, 5, 6, 3, 2, 3]; Подсчитайте количество цифр 3 в этом массиве.
+// 1. Дан следующий массив: [1, 2, 3, 4, 5] С помощью метода splice преобразуйте массив в следующий: [1, 4, 5]
+
+// const array = [2, 2, 4, 6, 9, 10, 1, 5, 7, 8];
+// console.log(array);
+// for (let i = 0; i < array.length; i++) {
+//   if (array[i] % 2 == 0) {
+//     console.log(`${array[i]} в квадрате = ${array[i] ** 2}`);
+//   } else if (array[i] % 3 == 0) {
+//     console.log(`${array[i]} в кубе = ${array[i] ** 3}`);
+//   }
+// }
+
+// const arr = [1, 2, 3, 2, 4, 3, 3, 6, 3, 2, 3];
+// count = 0;
+// for (let i = 0; i <= arr.length; i++) {
+//   if (arr[i] == 3) {
+//     count++;
+//   }
+//   continue;
+// }
+// console.log(count);
+
+const arr = [1, 2, 3, 4, 5];
+arr.splice(1, 2);
+console.log(arr);
