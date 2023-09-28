@@ -9,9 +9,7 @@
 сообщение "Размер заработной платы за вычетом налогов равен N."
 */
 
-const userNumber = Number.parseInt(prompt("Введите размер зарплаты"));
-// console.log(typeof userNumber);
-// console.log(userNumber);
+const userNumber = Number.parseFloat(prompt("Введите размер зарплаты"));
 if (!Number.isFinite(userNumber)) {
   console.log("Значение задано неверно");
 } else {
@@ -23,5 +21,5 @@ if (!Number.isFinite(userNumber)) {
 }
 
 function salaryPercent(userNumber) {
-  return (userNumber * 0.13).toFixed(0);
+  return userNumber * 0.13;
 }

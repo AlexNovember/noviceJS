@@ -25,9 +25,8 @@ function summ(num1, num2) {
 function diff(num1, num2) {
   if (num1 === num2) {
     return 0;
-  } else {
-    return Math.max(num1, num2) - Math.min(num1, num2);
   }
+  return Math.max(num1, num2) - Math.min(num1, num2);
 }
 
 function multi(num1, num2) {
@@ -37,9 +36,8 @@ function multi(num1, num2) {
 function dividing(num1, num2) {
   if (num2 === 0) {
     return console.log("На ноль делить нельзя");
-  } else {
-    return num1 / num2;
   }
+  return num1 / num2;
 }
 
 console.log(summ(3, 4));

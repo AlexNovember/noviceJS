@@ -9,10 +9,11 @@
 
 function cubeResult(num) {
   console.log(`Передали в функцию число ${num}`);
-  num = num ** 3;
+  num1 = num ** 3;
+  //   num я бы не менял, параметр лучше не менять, оставить его таким, какой есть.
   //   num = Math.pow(num, 3); // также можно использовать функцию Math.pow
-  console.log(`Результат возведения в куб ${num}`);
-  return num;
+  console.log(`Результат возведения в куб ${num1}`);
+  return num1;
 }
 
 cubeResult(parseFloat(3));

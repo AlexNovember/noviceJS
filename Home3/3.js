@@ -10,9 +10,9 @@
 три числа. Проверять их не нужно.
 */
 
-const userNum1 = prompt("Веедите первое число:");
-const userNum2 = prompt("Веедите второе число:");
-const userNum3 = prompt("Веедите третье число:");
+const userNum1 = +prompt("Веедите первое число:");
+const userNum2 = +prompt("Веедите второе число:");
+const userNum3 = +prompt("Веедите третье число:");
 
 const maxResult = () => Math.max(userNum1, userNum2, userNum3);
 
