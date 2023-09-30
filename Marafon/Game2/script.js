@@ -3,6 +3,9 @@ const screens = document.querySelectorAll(".screen");
 const timeList = document.querySelector("#time-list");
 const timeEl = document.querySelector("#time");
 const board = document.querySelector("#board");
+const cursor = document.querySelector(".cursor");
+const audio = new Audio("1.mp3");
+const audio2 = new Audio("2.mp3");
 
 let time = 0;
 let score = 0;
@@ -13,6 +16,7 @@ startBtn.addEventListener("click", (event) => {
 });
 
 timeList.addEventListener("click", (event) => {
+  audio2.play();
   if (event.target.classList.contains("time-btn")) {
     // console.log(event.target);
     // console.log(event.target.getAttribute("data-time"));
@@ -24,6 +28,7 @@ timeList.addEventListener("click", (event) => {
 });
 
 board.addEventListener("click", (event) => {
+  audio.play();
   if (event.target.classList.contains("circle")) {
     score++;
     event.target.remove();
@@ -62,6 +67,15 @@ function finishGame(params) {
 function createRandomCircle(params) {
   const circle = document.createElement("div");
   //   element.style.backgroundColor = `red`;
+
+  const mouseMove = function (e) {
+    let x = e.clientX;
+    let y = e.clientY;
+    cursor.style.left = x + "px";
+    cursor.style.top = y + "px";
+  };
+
+  document.addEventListener("mousemove", mouseMove);
 
   const size = getRandomNumber(10, 60);
   const { width, height } = board.getBoundingClientRect();
