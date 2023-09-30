@@ -66,7 +66,6 @@ function finishGame(params) {
 
 function createRandomCircle(params) {
   const circle = document.createElement("div");
-  //   element.style.backgroundColor = `red`;
 
   const mouseMove = function (e) {
     let x = e.clientX;
