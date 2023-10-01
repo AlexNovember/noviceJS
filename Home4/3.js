@@ -46,10 +46,10 @@ function minArrayNumber(arrayNew) {
 }
 
 function findIndexInArray(arrayNew) {
-    let arrayFunc = [];
+    let arrayIndex = [];
     for (let i = 0; i < arrayNew.length; i++) {
         if (arrayNew[i] === comparingNumber) {
-            arrayFunc.push(i);
+            arrayIndex.push(i);
         } continue;
-    } return arrayNew = arrayFunc;
+    } return arrayNew = arrayIndex;
 }
