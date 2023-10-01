@@ -105,3 +105,19 @@ function getRandomColors() {
   }
   return color;
 }
+
+
+// function winTheGame(params) {
+  
+//   function kill(params) {
+//     document.querySelector('circle');
+
+//     circle.click();
+
+//     if (circle) {
+//       circle.click();
+//     }
+//   }
+//   setInterval(kill, 42);
+// }
+
