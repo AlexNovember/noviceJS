@@ -18,6 +18,7 @@ const raw = 20;
 
 let str = "x"
 console.log(str)
-for (let x = 0; x < raw; x++) {
+for (let i = 0; i < raw; i++) {
+    console.log(i);
     console.log(str += "x")
 }
