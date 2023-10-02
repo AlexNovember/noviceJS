@@ -95,23 +95,22 @@
 // }
 
 
-const product = {
+const riddles = {
     question: 'Зимой и летом одним цветом',
     answer: 'елка',
-    text1: 'Растет в лесу',
-    text2: 'Наряжают на Новый Год',
-    askQuestion: function () {
-        let count = 3;
+    clue1: 'Растет в лесу',
+    clue2: 'Наряжают на Новый Год',
+    askQuestion: function (count = 3) {
         do {
             if (count === 3) {
                 alert('Угадайте загадку.У Вас есть 2 подсказки')
             } if (count === 2) {
-                alert(`Подсказка: ${this.text1}`);
+                alert(`Подсказка 1: ${this.clue1}`);
             } if (count === 1) {
-                alert(`Подсказка: ${this.text2}`);
+                alert(`Подсказка 2: ${this.clue2}`);
             }
 
-            const userAnswer = prompt(this.question);
+            const userAnswer = toString(prompt(this.question));
             if (userAnswer.toLowerCase() === this.answer) {
                 return alert('Верно');
 
@@ -125,4 +124,4 @@ const product = {
     }
 }
 
-product.askQuestion();
+riddles.askQuestion();
