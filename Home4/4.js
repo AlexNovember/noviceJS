@@ -16,8 +16,8 @@ console.log('\nЗадание 4');
 
 const raw = 20;
 
-let str = "x"
-console.log(str)
+let str = "x";
+console.log(str);
 for (let i = 0; i < raw; i++) {
-    console.log(str += "x")
+    console.log(str += "x");
 }

@@ -99,24 +99,29 @@ const product = {
     question: 'Зимой и летом одним цветом',
     answer: 'елка',
     text1: 'Растет в лесу',
+    text2: 'Наряжают на Новый Год',
     askQuestion: function () {
-        let count = 0;
+        let count = 3;
         do {
-            if (count === 1) {
-                alert("Растет в лесу");
+            if (count === 3) {
+                alert('Угадайте загадку.У Вас есть 2 подсказки')
             } if (count === 2) {
-                alert("Наряжают на Новый Год");
+                alert(`Подсказка: ${this.text1}`);
+            } if (count === 1) {
+                alert(`Подсказка: ${this.text2}`);
             }
 
             const userAnswer = prompt(this.question);
-            if (userAnswer !== this.answer) {
-                alert('Не угадали');
-                count++;
+            if (userAnswer.toLowerCase() === this.answer) {
+                return alert('Верно');
+
             } else {
-                alert('Верно');
-                break;
+                alert('Не угадали');
+                count--;
             }
-        } while (count !== 3);
+        } while (count > 0) {
+            alert(`Это была ${this.answer.toUpperCase()}`);
+        }
     }
 }
 

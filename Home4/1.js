@@ -13,24 +13,24 @@
 console.log('Задание 1');
 
 const array = []
-const ArrayLength = 20;
+const arrayLength = 20;
 addArray(array)
 console.log(array);
-EvenUnevenArray(array)
+evenUnevenArray(array)
 
 function addArray(array) {
-    for (let i = 0; i < ArrayLength + 1; i++)
+    for (let i = 0; i < arrayLength + 1; i++) {
         array.push(i);
-    return array
+    }
 }
 
-function EvenUnevenArray(array) {
+function evenUnevenArray(array,) {
     for (let i = 0; i < array.length; i++) {
-        if (array[i] === 0) {
+        if (i === 0) {
             console.log(`${array[i]} - это 0`);
-        } else if (array[i] % 2 === 1) {
+        } else if (i % 2 === 1) {
             console.log(`${array[i]} - нечетное число`);
-        } else if (array[i] % 2 === 0) {
+        } else {
             console.log(`${array[i]} - четное число`);
         }
     }

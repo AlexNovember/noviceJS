@@ -17,11 +17,11 @@
 console.log('\nЗадание 3');
 
 const arrayNew = [];
-const arrayLenght = 5
-const randomRange = 9;
+// const arrayLenght = 5
+// const randomRange = 9;
 const comparingNumber = 3;
 
-randomArray(arrayNew);
+randomArray(arrayNew, 20, 9);
 console.log(arrayNew);
 console.log(`Сумма ${summArray(arrayNew)}`);
 console.log(`Минимальное число ${minArrayNumber(arrayNew)}`);
@@ -29,11 +29,10 @@ findIndexInArray(arrayNew);
 console.log(`Число ${comparingNumber} лежит в массиве под индексами`)
 console.log(findIndexInArray(arrayNew));
 
-function randomArray(arrayNew) {
-    for (let i = 0; i < arrayLenght; i++) {
-        arrayNew.push(Math.round(Math.random() * randomRange));
+function randomArray(arrayNew, len, range) {
+    for (let i = 0; i < len; i++) {
+        arrayNew.push(Math.round(Math.random() * range));
     }
-    return arrayNew;
 }
 
 function summArray(arrayNew) {
@@ -41,15 +40,16 @@ function summArray(arrayNew) {
 }
 
 function minArrayNumber(arrayNew) {
-    return Math.min.apply(null, arrayNew);
+    return Math.min(...arrayNew);
+    // return Math.min.apply(null, arrayNew);
     // return arrayNew.reduce((x, y) => Math.min(x, y)); // через reduce
 }
 
 function findIndexInArray(arrayNew) {
-    let arrayIndex = [];
+    const arrayIndex = [];
     for (let i = 0; i < arrayNew.length; i++) {
         if (arrayNew[i] === comparingNumber) {
             arrayIndex.push(i);
         } continue;
-    } return arrayNew = arrayIndex;
+    } return arrayIndex;
 }
