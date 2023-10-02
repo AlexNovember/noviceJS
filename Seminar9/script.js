@@ -113,7 +113,6 @@ const riddles = {
             const userAnswer = toString(prompt(this.question));
             if (userAnswer.toLowerCase() === this.answer) {
                 return alert('Верно');
-
             } else {
                 alert('Не угадали');
                 count--;
