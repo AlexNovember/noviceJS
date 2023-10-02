@@ -100,7 +100,7 @@ const riddles = {
     answer: 'елка',
     clue1: 'Растет в лесу',
     clue2: 'Наряжают на Новый Год',
-    askQuestion: function (count = 3) {
+    askQuestion: function (count) {
         do {
             if (count === 3) {
                 alert('Угадайте загадку.У Вас есть 2 подсказки')
@@ -110,7 +110,8 @@ const riddles = {
                 alert(`Подсказка 2: ${this.clue2}`);
             }
 
-            const userAnswer = toString(prompt(this.question));
+            const userAnswer = (prompt(this.question));
+            console.log(userAnswer);
             if (userAnswer.toLowerCase() === this.answer) {
                 return alert('Верно');
             } else {
@@ -123,4 +124,4 @@ const riddles = {
     }
 }
 
-riddles.askQuestion();
+riddles.askQuestion(3);
