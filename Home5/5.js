@@ -22,3 +22,4 @@ for (let i = 0; i < ru.length; i++) {
   daysOfTheWeek[en[i]] = ru[i];
 }
 console.log(daysOfTheWeek);
+

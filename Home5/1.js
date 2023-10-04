@@ -18,14 +18,13 @@ const numbers = {
 const arrayNumbers = Object.values(numbers);
 console.log(arrayNumbers.filter(number => number >= 3));
 
-
+// через цикл
 // const result = {};
 // for (const i in numbers) {
 //   const number = numbers[i]
-//   if (numbers[i] > 3) {
+//   if (numbers[i] >= 3) {
 //     result[i] = number
 //   }
 // }
-
 // console.log(Object.values(result))
 
