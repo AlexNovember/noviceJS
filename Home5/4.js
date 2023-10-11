@@ -32,6 +32,6 @@ const products = [
 ];
 
 
-console.log(products.filter(elements => 'photos' in elements && elements.photos != 0));
+console.log(products.filter(elements => 'photos' in elements && elements.photos.length !== 0));
 
 console.log(products.sort((price1, price2) => price1.price - price2.price));

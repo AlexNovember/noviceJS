@@ -1,0 +1,14 @@
+.title {
+    color: red;
+    box-sizing: border-box;
+}
+
+.title + p {
+    color: blue;
+    font-size: 28px;
+}
+
+p + p {
+    color: brown;
+    font-size: 28px;
+}

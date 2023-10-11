@@ -1,0 +1,20 @@
+
+.test_button {
+    margin-left: 200px;
+    margin-top: 200px;
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    /* transition: 2s; */
+  }
+  
+  .active { 
+    transition: all 2s ease-in-out;
+    transform: scale(1.5);
+  }
+
+  .active2 { 
+    transition: 8s;
+/*   transition-duration: 8s; */
+    transform: scale(0.1);
+  }

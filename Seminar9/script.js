@@ -256,22 +256,25 @@
 // подсказок может быть несколько.
 // Если пользователь ответил неверно после всех подсказок, то в консоль
 // выводится текст: “вы проиграли”.
-// const riddle = {
-//     question: "зимой и летом одним цветом",
-//     answer: "ёлка",
-//     listHint: ["колючая", "зеленая", "не листья а иголки", "пахнет пихтой"],
-//     askQuestion() {
-//         for (let i = 0; i < this.listHint.length; i++) {
-//             const answer = prompt(this.question);
-//             if (answer === this.answer) {
-//                 return alert("вы угадали");
-//             }
-//             alert(this.listHint[i]);
-//         }
-//         alert("проиграли");
-//     },
-// };
-// riddle.askQuestion();
+
+const riddle = {
+    question: "зимой и летом одним цветом",
+    answer: "ёлка",
+    listHint: ["колючая", "зеленая", "не листья а иголки", "пахнет пихтой"],
+    askQuestion() {
+        for (let i = 0; i < this.listHint.length; i++) {
+            const answer = prompt(this.question);
+            if (answer === this.answer) {
+                return alert("вы угадали");
+            }
+            alert(this.listHint[i]);
+        }
+        alert("проиграли");
+    },
+};
+riddle.askQuestion();
+
+
 
 /*
 Новый фильм "Мстители" только что вышел! В кассе кинотеатра много людей,
