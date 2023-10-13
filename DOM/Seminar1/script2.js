@@ -33,3 +33,5 @@ console.log(word);
 hello.textContent = 'sdfsdf';
 hello.innerHTML = '<h1>AAAAAAAAAAAAAAAA</h1>' //ожно вставлять HTML
 console.log(word);
+
+

@@ -16,7 +16,6 @@ startBtn.addEventListener("click", (event) => {
 });
 
 timeList.addEventListener("click", (event) => {
-  audio2.play();
   if (event.target.classList.contains("time-btn")) {
     // console.log(event.target);
     // console.log(event.target.getAttribute("data-time"));
