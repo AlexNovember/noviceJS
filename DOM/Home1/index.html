@@ -73,7 +73,7 @@ console.log('Задача 6');
 const parentElm = document.querySelector('.card-title');
 console.log(parentElm.parentNode);
 
-// 7. Создайте тегp`, запишите внутри него текст "Привет" и добавьте созданный тег в начало элемента, который имеет класс "card".
+// 7. Создайте тег p, запишите внутри него текст "Привет" и добавьте созданный тег в начало элемента, который имеет класс "card".
 
 console.log('Задача 7');
 
@@ -86,10 +86,12 @@ console.log(newP.parentElement);
 
 console.log('Задача 8');
 
-const delElm= document.querySelector('h6');
+const delElm = document.querySelector('h6');
+console.log(`Нашли элемент ${delElm}`);
 delElm.remove();
-console.log(document.querySelector('div'));
-console.log("h6 удален");
+console.log(`Ищем после удаления:`, document.querySelector('h6'),
+`Элемент удален`);
+
 </script>
 </body>
 </html>
