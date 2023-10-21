@@ -86,18 +86,18 @@
 
 // const person1 = new Person('Alex', 'male');
 
-class Person {
-    constructor(name, gender) {
-        this.name = name;
-        this.gender = gender;
-    }
+// class Person {
+//     constructor(name, gender) {
+//         this.name = name;
+//         this.gender = gender;
+//     }
 
-    sayName() {
-        console.log(`My name is ${this.name}`);
-    }
-}
+//     sayName() {
+//         console.log(`My name is ${this.name}`);
+//     }
+// }
 
-const person1 = new Person('Alex', 'male');
+// const person1 = new Person('Alex', 'male');
 
 // Employee.prototype = Object.create(Person.prototype);
 // Employee.prototype.constructor = Employee;
@@ -115,18 +115,47 @@ const person1 = new Person('Alex', 'male');
 
 // const employee1 = new Employee('Pasha', 'male', 'Director');
 
-class Employee extends Person {
-    constructor(name, gender, position) {
-        super(name, gender);
-        this.position = position;
-    }
+// class Employee extends Person {
+//     constructor(name, gender, position) {
+//         super(name, gender);
+//         this.position = position;
+//     }
 
-    sayPosition() {
-        console.log(`My position is ${this.position}`);
-    }
-}
+//     sayPosition() {
+//         console.log(`My position is ${this.position}`);
+//     }
+// }
 
-const employee1 = new Employee('Pasha', 'male', 'Director');
+// const employee1 = new Employee('Pasha', 'male', 'Director');
 
-console.log(employee1.sayPosition());
-console.log(person1.sayName());
+// console.log(employee1.sayPosition());
+// console.log(person1.sayName());
+
+// let num1 = 1;
+// let num2 = 2;
+// console.log('сумма: ' + Number.parseInt(num1 + num2));
+
+// let a = 1;
+// let b = 2;
+// console.log(a + b);
+
+// let num = '123';
+// let sum = +(num[0]) + +(num[1]) + +(num[2]);
+// console.log(sum);
+
+// let num = String(123);
+// console.log(num[0]);
+
+// let a = 0;
+// console.log(a++);
+// console.log(++a);
+
+// let num = String(123);
+// console.log(num.length);
+
+// let a = 24 * 60 * 60;
+// console.log(a);
+
+// let num = 123;
+// let str = String(num);
+// console.log(str.length);
