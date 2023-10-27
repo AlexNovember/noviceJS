@@ -1,22 +1,50 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
+.el {
+  position: relative;
+  background-color: grey;
+  margin: 30px;
+  width: 300px;
+  height: 300px;
+}
+
+.aa {
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: red;
+  /* background-image: url(../Circle/bottom3.png); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform-origin: 0;
+}
+
+.aaa {
+  width: 10px;
+  height: 10px;
+  transition: width 5s, height 5s;
+}
+
+/* 
 body {
     /* position: relative; */
-    background: black;
-}
-
-.circle_big {
-    /* position: relative; */
-    width: 50px;
+/* background: black;
+} */
+/*  */
+/* .circle_big { */
+/* position: relative; */
+/* width: 50px;
     height: 50px;
     background: red;
     border-radius: 50px;
-}
+} */
 
-.circle_middle {
+/* .circle_middle {
     position: absolute;
     width: 140px;
     height: 140px;
@@ -24,4 +52,4 @@ body {
     top: 5px;
     background: white;
     border-radius: 50px;
-}
+} */

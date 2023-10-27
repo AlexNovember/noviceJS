@@ -11,11 +11,28 @@ const durationElm = document.querySelector('.duration');
 
 playElm.addEventListener('click', () => {
     videoElm.play();
+    remove.addEventListener();
 });
 
 pauseElm.addEventListener('click', () => {
     videoElm.pause();
 });
+
+videoElm.addEventListener('click', () => {
+    // videoElm.classList.add('full');
+    fullD();
+});
+
+let flag = true;
+
+function fullD() {
+    if (flag) {
+        videoElm.classList.add('full');
+    } else {
+        videoElm.classList.remove('full')
+    }
+    flag = !flag;
+}
 
 videoElm.addEventListener('timeupdate', () => {
     durationElm.textContent = videoElm.duration.toFixed(1);
@@ -33,18 +50,34 @@ timingElm.addEventListener('input', () => {
 
 document.addEventListener('keydown', (e) => {
     if (e.code === 'Space') {
-        videoElm.pause();
+        pause();
     }
     if (e.code === 'ArrowLeft') {
-        videoElm.currentTime -= 5;
+        videoElm.currentTime -= 3;
     }
     if (e.code === 'ArrowRight') {
-        videoElm.currentTime += 5;
+        videoElm.currentTime += 3;
     }
 });
 
+let fl = true;
 
+function pause() {
+    document.querySelector('video');
+    if (fl) {
+        videoElm.play();
+    } else {
+        videoElm.pause();
+    }
+    fl = !fl;
+}
 
+// document.addEventListener('keypress', (e) => {
+//     if (e.code === 'Space') {
+//         videoElm.pause();
+//     }
+
+// });
 
 
 class findSelector {
