@@ -7,15 +7,15 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<!-- <input id="from" type="text" />В инпуте написано:
+		<input id="from" type="text" />В инпуте написано:
 		<span class="span-input"></span>
 
-		<br /> -->
+		<br />
 
-		<!-- <button class="messageBtn">Показать блок</button>
+		<button class="messagebtn">Показать блок</button>
 		<div class="message" style="visibility: hidden">Привет :)</div>
 
-		<br /> -->
+		<br />
 
 		<form>
 			<label>
@@ -42,24 +42,24 @@
 
 			// 1. При изменении значения в input с id="from", значение содержащееся в нем должно моментально отображаться в span. То есть при печати в input'е тег span также должен меняться.
 
-			// const inputForm = document.querySelector("#from");
-			// const spanForm = document.querySelector(".span-input");
+			const inputForm = document.querySelector("#from");
+			const spanForm = document.querySelector(".span-input");
 
-			// document.addEventListener("input", () => {
-			// 	spanForm.textContent = inputForm.value;
-			// });
+			document.addEventListener("input", () => {
+				spanForm.textContent = inputForm.value;
+			});
 
 			//  При клике на кнопку с классом messageBtn необходимо элементу с классом message:
 			// - добавить два класса: animate_animated и animate_fadeInLeftBig
 			// - поставить данному элементу стиль visibility в значение 'visible'.
 
-			// const btn = document.querySelector(".messageBtn");
-			// const message = document.querySelector(".message");
+			const btn = document.querySelector(".messagebtn");
+			const message = document.querySelector(".message");
 
-			// btn.addEventListener("click", function () {
-			// 	message.classList.add("animate_animated", "animate_fadeInLeftBig");
-			// 	message.setAttribute("style", "visibility: visible");
-			// });
+			btn.addEventListener("click", function () {
+				message.classList.add("animate_animated", "animate_fadeInLeftBig");
+				message.setAttribute("style", "visibility: visible");
+			});
 
 			// Необходимо при отправке формы проверить, заполнены ли все поля в этой форме. Если какое-либо поле не заполнено, форма не должна отправляться, также должны быть подсвечены незаполненные поля (необходимо поставить класс error незаполненным полям). Как только пользователь начинает заполнять какое-либо поле, необходимо, при вводе в данное поле, произвести проверку:
 			// - Если поле пустое, необходимо данное поле подсветить (поставить класс error данному полю).
