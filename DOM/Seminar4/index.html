@@ -5,18 +5,23 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<script src="script.js" defer></script>
+		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
 		<!-- <form>
-			<label><input type="radio" name="Choice" value="Tea" />Tea</label>
-			<label><input type="radio" name="Choice" value="Coffee" />Coffee</label>
+			<label><input class="tea" type="radio" name="Choice" />Tea</label>
+			<label><input class="coffee" type="radio" name="Choice" />Coffee</label>
 			<button class="btn" type="submit">Click</button>
 		</form> -->
 
 		<!-- <form>
 			<label
-				><input type="checkbox" name="Agree" value="Agree" />Согласен с
-				условиями</label
+				><input
+					class="check"
+					type="checkbox"
+					name="Agree"
+					value="Agree"
+				/>Согласен с условиями</label
 			>
 			<div class="error"></div>
 			<button class="btn" type="submit">Send</button>
@@ -27,7 +32,13 @@
 			<button class="btn" type="submit">Отправить</button>
 		</form> -->
 
-		<textarea class="textarea" rows="5" cols="45" name="text"></textarea>
+		<textarea
+			class="textarea"
+			maxlength="50"
+			rows="5"
+			cols="45"
+			name="text"
+		></textarea>
 		<h1 class="text">Заголовок</h1>
 	</body>
 </html>
