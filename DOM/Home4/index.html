@@ -72,7 +72,7 @@
 
 			form.addEventListener("submit", function (e) {
 				e.preventDefault();
-				if (!firstInput.value) {
+				if (!firstInput.value.replace(/^\s+|\s+$/g, "")) {
 					errorBorder(firstInput);
 					console.log("Первое пустое");
 				}
@@ -80,7 +80,7 @@
 					errorBorder(secondInput);
 					console.log("Второе пустое");
 				}
-				if (secondInput.value && firstInput.value) {
+				if (firstInput.value.replace(/^\s+|\s+$/g, "") && secondInput.value) {
 					console.log(
 						`${firstInput.value} ${secondInput.value} Данные отправлены`
 					);
