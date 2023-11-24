@@ -30,14 +30,9 @@ img {
 	gap: 10px;
 }
 
-.country__name {
+.countries__box {
 	width: 400px;
-	font-weight: bold;
-}
-
-.country__box {
-	width: 500px;
-	height: 200px;
+	height: 220px;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -46,6 +41,22 @@ img {
 	border: 1px solid black;
 	position: relative;
 	box-shadow: 11px 12px 8px -5px rgba(34, 60, 80, 0.2);
+}
+
+.country__box {
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.country__name {
+	width: 300px;
+	font-weight: bold;
+}
+
+.region {
+	font-style: italic;
 }
 
 .capital {
@@ -59,4 +70,15 @@ img {
 	right: 0;
 	top: 0;
 	border: 1px solid black;
+}
+
+.area {
+	position: absolute;
+	bottom: 0;
+}
+
+.count {
+	position: absolute;
+	bottom: 0;
+	right: 5px;
 }

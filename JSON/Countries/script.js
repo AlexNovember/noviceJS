@@ -1,7 +1,8 @@
 'use strict';
 
 const countriesElms = document.querySelector('.countries');
-// console.log(countriesElms);
+
+let count = 1;
 
 fetch('https://restcountries.com/v3.1/all')
     .then(function (response) {
@@ -9,24 +10,27 @@ fetch('https://restcountries.com/v3.1/all')
     })
     .then(function (countries) {
         countries.forEach(element => {
-            console.log(element.maps.googleMaps);
+
             if (element.capital !== undefined) {
-                countriesElms.insertAdjacentHTML('beforeend', addCountry(element.translations.rus.common, element.capital[0], element.flags.png, element.region, element.maps.googleMaps))
+                countriesElms.insertAdjacentHTML('beforeend', addCountry(element.translations.rus.common, element.capital[0], element.flags.png, element.region, element.maps.googleMaps, element.area, count++))
             }
             else {
-
-                countriesElms.insertAdjacentHTML('beforeend', addCountry(element.translations.rus.official, 'Нет данных', element.flags.png, element.region, element.maps.googleMaps))
+                countriesElms.insertAdjacentHTML('beforeend', addCountry(element.translations.rus.official, 'Нет данных', element.flags.png, element.region, element.maps.googleMaps, element.area, count++))
             }
         });
     });
 
-function addCountry(country, capital, flag, region, maps) {
+function addCountry(country, capital, flag, region, maps, area, count) {
     return `
-<div class="country__box">    
+<div class="countries__box">
+    <div class="country__box"> 
         <h2 class='country__name'>${country}</h2>
+        <p class='region'>${region}</p>
         <p class='capital'>Столица: ${capital}</p>
         <img class='flag' src="${flag}">
-        <p class='region'>${region}</p>
         <a class="maps" href="${maps}">Посмотреть на карте</a>
+        <p class='area'>Площадь: ${area}</p>
+        <p class='count'>${count}</p>
+        </div>
 </div>`
 }
