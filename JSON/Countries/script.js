@@ -24,7 +24,7 @@ function addCountry(country, capital, flag, region, maps, area, count) {
     return `
 <div class="countries__box">
     <div class="country__box"> 
-        <h2 class='country__name'>${country}</h2>
+        <h2 class='name'>${country}</h2>
         <p class='region'>${region}</p>
         <p class='capital'>Столица: ${capital}</p>
         <img class='flag' src="${flag}">
