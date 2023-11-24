@@ -1,0 +1,37 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.countries {
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.country__box {
+	width: 500px;
+	height: 200px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 10px;
+	padding: 10px;
+	border: 1px solid black;
+	position: relative;
+	box-shadow: 11px 12px 8px -5px rgba(34, 60, 80, 0.2);
+}
+
+.capital {
+	font-size: 20px;
+}
+
+.flag {
+	position: absolute;
+	width: 70px;
+	height: 40px;
+	right: 0;
+	top: 0;
+}

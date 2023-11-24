@@ -1,5 +1,13 @@
 'use strict';
 
-fetch('http://dataservice.accuweather.com/locations/v1/countries/RU')
+const divEl = document.createElement('div');
+
+fetch('https://catfact.ninja/fact')
+
     .then(response => response.json()) // Декодируем ответ в формате json
-    .then(data => console.log(data)); // Выводим ответ в консоль
+
+    .then(data => document.body.innerHTML = (data.fact));
+
+setTimeout(function () {
+    location.reload();
+}, 3000);
