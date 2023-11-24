@@ -1,6 +1,25 @@
+.cssFont_1 {
+	font-family: "Oswald", sans-serif;
+	font-size: 20px;
+	letter-spacing: 0px;
+	word-spacing: 0px;
+	color: #000000;
+	font-weight: normal;
+	text-decoration: none;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+}
+
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
+	font-family: "Oswald";
+}
+
+img {
+	width: 100%;
 }
 
 .countries {
@@ -9,6 +28,11 @@
 	justify-content: center;
 	flex-wrap: wrap;
 	gap: 10px;
+}
+
+.country__name {
+	width: 400px;
+	font-weight: bold;
 }
 
 .country__box {
@@ -30,8 +54,9 @@
 
 .flag {
 	position: absolute;
-	width: 70px;
-	height: 40px;
+	width: 100px;
+	height: 60px;
 	right: 0;
 	top: 0;
+	border: 1px solid black;
 }
