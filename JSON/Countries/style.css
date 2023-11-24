@@ -1,8 +1,6 @@
 .cssFont_1 {
 	font-family: "Oswald", sans-serif;
 	font-size: 20px;
-	letter-spacing: 0px;
-	word-spacing: 0px;
 	color: #000000;
 	font-weight: normal;
 	text-decoration: none;
@@ -26,8 +24,17 @@ body {
 	background-color: dimgray;
 }
 
+.head {
+	height: 50px;
+	background-color: dimgray;
+	text-align: center;
+	padding-top: 10px;
+	color: white;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
 .countries {
-	margin-top: 50px;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
@@ -41,7 +48,7 @@ body {
 	flex-direction: column;
 	flex-wrap: wrap;
 	gap: 10px;
-	padding: 10px;
+	padding-left: 10px;
 	border: 1px solid black;
 	position: relative;
 	box-shadow: 11px 12px 8px -5px rgba(34, 60, 80, 0.2);
@@ -54,7 +61,7 @@ body {
 	flex-direction: column;
 }
 
-.region {
+.name {
 	width: 280px;
 	font-weight: bold;
 }
@@ -79,6 +86,10 @@ body {
 .maps {
 	position: absolute;
 	bottom: 0;
+}
+
+.maps:visited {
+	color: #0000ee;
 }
 
 .count {
