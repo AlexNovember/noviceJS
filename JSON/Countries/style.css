@@ -32,7 +32,7 @@ img {
 
 .countries__box {
 	width: 400px;
-	height: 220px;
+	min-height: 250px;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -44,14 +44,13 @@ img {
 }
 
 .country__box {
-	width: 300px;
+	max-width: 300px;
 	display: flex;
 	flex-direction: column;
-	gap: 5px;
 }
 
 .country__name {
-	width: 300px;
+	width: 280px;
 	font-weight: bold;
 }
 
@@ -72,7 +71,7 @@ img {
 	border: 1px solid black;
 }
 
-.area {
+.maps {
 	position: absolute;
 	bottom: 0;
 }
