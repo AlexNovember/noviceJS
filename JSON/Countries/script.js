@@ -10,18 +10,9 @@ fetch('https://restcountries.com/v3.1/all')
         return response.json()
     })
     .then(function (countries) {
-        // Создадим пустую строку, куда будем закидывать теги option для списка
-        let selectHTML = '';
-
-        // Циклом обходим объект и записываем в selectHTML 
         countries.forEach(element => {
-
-            selectHTML += `<option value="${element.name.common}">${element.name.common}</option>`;
-            // }
+            selectElms.insertAdjacentHTML('afterbegin', addSelect(element.name.common))
         });
-
-        // Выбираем наш выпадающий список и записываем в него обработанные ранее данные
-        document.querySelector('.select').insertAdjacentHTML = selectHTML;
 
         countries.forEach(element => {
 
@@ -31,9 +22,6 @@ fetch('https://restcountries.com/v3.1/all')
             else {
                 countriesElms.insertAdjacentHTML('beforeend', addCountry(element.translations.rus.official, 'Нет данных', element.flags.png, element.region, element.maps.googleMaps, element.area, count++))
             }
-
-
-
         });
     });
 
@@ -52,9 +40,16 @@ function addCountry(country, capital, flag, region, maps, area, count) {
 </div>`
 }
 
-const select = document.querySelector('.select');
+function addSelect(selectValue) {
+    return `
+    <select class="select" name="name">
+	<option value="${selectValue}">${selectValue}</option>
+	</select>`
+}
 
-select.addEventListener('change', function (e) {
-    console.log(select.value);
+
+selectElms.addEventListener('change', function (e) {
+
+    console.log(selectElms.value);
 });
-// const selectValue = select.value;
+
