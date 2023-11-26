@@ -3,6 +3,8 @@
 const countriesElms = document.querySelector('.countries');
 const selectElms = document.querySelector('.select');
 
+
+
 let count = 1;
 
 fetch('https://restcountries.com/v3.1/all')
@@ -10,8 +12,41 @@ fetch('https://restcountries.com/v3.1/all')
         return response.json()
     })
     .then(function (countries) {
+
+        // const a = JSON.parse(JSON.stringify(countries));
+        // console.log(a);
+
+
+        selectElms.addEventListener('change', function (event) {
+            console.log(selectElms.value);
+            const findElms = document.querySelectorAll('.name');
+
+
+            findElms.forEach(element => {
+                const parenElm = element.parentElement.parentElement;
+                // console.log(parenElm);
+
+                parenElm.classList.add("hidden");
+
+                if (selectElms.value === element.textContent) {
+                    // console.log(b);
+                    parenElm.classList.remove('hidden');
+                    parenElm.classList.add('big');
+                    // const s = element.querySelector('h2');
+                    // console.log(s.firstElementChild);
+                    // b.firstChild.classList.add('add');\
+                    // s.classList.add('hidden');
+                    // return console.log(s);
+                }
+            });
+        });
+
+
+
+
+
         countries.forEach(element => {
-            selectElms.insertAdjacentHTML('afterbegin', addSelect(element.name.common))
+            selectElms.insertAdjacentHTML('afterbegin', addSelect(element.translations.rus.common))
         });
 
         countries.forEach(element => {
@@ -48,8 +83,4 @@ function addSelect(selectValue) {
 }
 
 
-selectElms.addEventListener('change', function (e) {
-
-    console.log(selectElms.value);
-});
 

@@ -107,3 +107,22 @@ body {
 	font-size: 26px;
 	text-align: center;
 }
+
+/* .hidden {
+	width: 600px;
+	height: 500px;
+	position: fixed;
+	top: 0;
+} */
+
+.hidden {
+	display: none;
+}
+
+.big {
+	width: 700px;
+	height: 500px;
+	transition: 1.2s ease-in;
+
+	font-size: 40px;
+}
