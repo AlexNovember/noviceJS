@@ -13,8 +13,8 @@ fetch('https://restcountries.com/v3.1/all')
     })
     .then(function (countries) {
 
-        // const a = JSON.parse(JSON.stringify(countries));
-        // console.log(a);
+        // const jsonCopy = JSON.parse(JSON.stringify(countries));
+        // console.log(jsonCopy);
 
 
         selectElms.addEventListener('change', function (event) {
@@ -23,27 +23,16 @@ fetch('https://restcountries.com/v3.1/all')
 
 
             findElms.forEach(element => {
-                const parenElm = element.parentElement.parentElement;
-                // console.log(parenElm);
+                const parentElm = element.parentElement.parentElement;
 
-                parenElm.classList.add("hidden");
+                parentElm.classList.add("hidden");
 
                 if (selectElms.value === element.textContent) {
-                    // console.log(b);
-                    parenElm.classList.remove('hidden');
-                    parenElm.classList.add('big');
-                    // const s = element.querySelector('h2');
-                    // console.log(s.firstElementChild);
-                    // b.firstChild.classList.add('add');\
-                    // s.classList.add('hidden');
-                    // return console.log(s);
+                    parentElm.classList.remove('hidden');
+                    parentElm.classList.add('big');
                 }
             });
         });
-
-
-
-
 
         countries.forEach(element => {
             selectElms.insertAdjacentHTML('afterbegin', addSelect(element.translations.rus.common))
