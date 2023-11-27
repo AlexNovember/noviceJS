@@ -35,7 +35,7 @@ fetch('https://restcountries.com/v3.1/all')
         });
 
         countries.forEach(element => {
-            selectElms.insertAdjacentHTML('afterbegin', addSelect(element.translations.rus.common))
+            selectElms.insertAdjacentHTML('beforeend', addSelect(element.translations.rus.common))
         });
 
         countries.forEach(element => {
