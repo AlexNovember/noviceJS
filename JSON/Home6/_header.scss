@@ -1,0 +1,43 @@
+@import 'vars';
+@import "mixins";
+
+
+
+.title {
+    background: $headTitleColor;
+}
+
+.title_menu {
+    min-height: 75px;
+    background: $headTitleColor;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left_menu {
+    display: flex;
+    align-items: flex-end;
+    gap: 41px;
+}
+
+.right_menu {
+    @include flexFull;
+    gap: 30px;
+}
+
+.topmenu {
+    @include flexFull;
+}
+
+.menu {
+    @include flexFull;
+}
+
+.icons:hover .menu-icon {
+    fill: $mainColor;
+}
+
+.search-icon:hover .menu-icon {
+    fill: $mainColor;
+}

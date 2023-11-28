@@ -22,10 +22,13 @@ fetch('https://restcountries.com/v3.1/all')
             const findElms = document.querySelectorAll('.name');
 
 
+
             findElms.forEach(element => {
                 const parentElm = element.parentElement.parentElement;
 
+                // parentElm[0].classList.add("big");
                 parentElm.classList.add("hidden");
+                parentElm.classList.remove('big');
 
                 if (selectElms.value === element.textContent) {
                     parentElm.classList.remove('hidden');

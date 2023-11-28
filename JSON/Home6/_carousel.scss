@@ -1,0 +1,68 @@
+@import 'vars';
+@import "mixins";
+
+
+  
+  .wrap {
+    background-color: $pictureBoxBackground;
+    position: relative;
+}
+  
+  .b-carousel {
+    overflow: hidden;
+    box-sizing: border-box;
+    // position: relative;
+    
+    &__prev,
+    &__next {
+      z-index: 2;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%) translateZ(0);
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+      z-index: 3;
+      border: none;
+
+      &:hover .arrow-color {
+        fill: $mainColor;
+    }
+    }
+    
+    &__next {
+        z-index: 2;
+        left: auto;
+        right: 0;
+      }
+  
+    &__wrap {
+      display: flex;
+      transition: transform .5s;
+      will-change: transform;
+      position: relative;
+      z-index: 1;
+    }
+    
+    &__item {
+        flex: 0 0 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+    &__img {
+        object-fit: cover;
+        display: block;
+        }
+}
+  
+    
+      
+    
+  
+      
+  
+        

@@ -1,0 +1,259 @@
+input[type=text]:focus {
+    border: 1px solid $mainColor;
+}
+
+
+.arrivals-new-arrivals-cart {
+    @include fontStyle (24px, $mainTextColor: $mainColor);
+}
+
+.goods_in_cart {
+    padding-top: 96px;
+    padding-bottom: 128px;
+}
+
+.goods_in_cart-box {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 128px;
+}
+
+.goods_in_cart-left-block {
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    
+    &-img {
+        height: 306px;
+    }
+
+    &-items {
+        position: relative;
+        box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        transition: 0.3s;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+
+    &-item {
+        width: 390px ;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 22px 0 0 32px;
+        @include fontStyle (22px);
+    }
+
+    &-item-name {
+        width: 200px;
+        @include fontStyle (24px, $mainTextColor: $headTitleColor)
+    }
+
+    &-item-price span {
+        color: $mainColor;
+    }
+
+    &-item-quantity-input {
+        width: 44px;
+        box-sizing: border-box;
+        height: 24.949px;
+        text-align: center;
+        border: 1px solid #EAEAEA;
+        margin-left: 24px;
+        @include fontStyle (18px, $mainTextColor: #656565);
+
+        ::placeholder {
+            font-size: 18px;
+        }
+    }
+}
+
+.goods_in_cart-box-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+
+    .goods_in_cart-box-button {
+        width: 235px;
+        height: 50px;
+        border: 1px solid #A4A4A4;
+        transition: 0.3s;
+        @include fontStyle (14px,300,$mainTextColor: #000000);
+        background-color: $bodyBackground;
+
+        &:hover {
+            background-color: #A4A4A4;
+            color: white;
+           
+        }
+
+        &-clear {
+            @include fontStyle (14px, 300, $mainTextColor: #000000);
+        }
+
+        &-continue {
+            @include fontStyle (14px, 300, $mainTextColor: #000000);
+        }
+    }
+}
+
+.goods_in_cart-right-block {
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 21px;
+
+    
+    .right-block-box {
+        display: flex;
+        flex-direction: column;
+        gap:21px;
+
+    }
+
+    &-title {
+        @include fontStyle (16px, 300, $mainTextColor: #222222);
+    }
+
+    &-item {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-input {
+        width: 360px;
+        height: 45px;
+        box-sizing: border-box;
+        @include fontStyle (18px, 400);
+        padding: 13px 17px 16px;       
+    }
+
+    &-quote {
+        border: 1px solid #A4A4A4;
+        padding: 11px 15px;
+        width: 102px;
+        height: 35px;
+        background-color: $bodyBackground;
+        @include fontStyle (11px, 300);
+        white-space: nowrap;
+        box-sizing: border-box;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: $mainColor;
+            border: 1px solid #A4A4A4;
+            color: white;
+            border: 1px solid $mainColor;
+        }
+    }
+
+    &-checkout {
+        height: 214px;
+        display: flex;
+        flex-direction: column;
+        background-color: #F5F3F3;
+        padding: 39px 44px 0 44px;
+        margin-top: 47px;
+
+        &-subtotal {
+            @include fontStyle (11px);
+            margin-bottom: 12px;
+        }
+
+        &-subtotal span {
+            margin-left: 10px;
+        }
+
+        &-grundtotal {
+            color: $mainColor;
+            @include fontStyle (16px, 300);
+        }
+
+        &-grundtotal span {
+            @include fontStyle (16px, 700);
+            padding-left: 10px;
+            color: $mainColor;
+
+        }
+
+        &-line {
+            width: 275px;
+            color: #E2E2E2;
+            margin: 21px 0 17px;
+        }
+
+        &-link {
+            box-sizing: border-box;
+            border: none;
+            background-color: $mainColor;
+            padding: 15px 42px;
+            @include fontStyle ($mainTextColor: white);
+            transition: 0.3s;
+
+            &:hover {
+                background-color: #d1536e;
+
+            }
+        }
+    }
+
+    ::-webkit-input-placeholder {
+        @include fontStyle (13px, 300, $mainTextColor: #B1B1B1);
+    }
+
+   }
+
+.value_box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.checkout_button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F5F3F3;
+}
+
+
+
+
+
+
+
+.closeModal {
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: opacity ease 0.5s;
+
+    &:hover {
+        opacity: 0.3;
+
+    }
+}
+
+.closeModal::before,
+.closeModal::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 24px;
+    height: 3px;
+    background: #000;
+}
+
+.closeModal::before {
+    transform: rotate(45deg);
+}
+
+.closeModal::after {
+    transform: rotate(-45deg);
+}

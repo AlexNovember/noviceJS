@@ -1,0 +1,40 @@
+@import 'vars';
+@import "mixins";
+
+
+.footer {
+    background-color: $headTitleColor;
+}
+
+.footer-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 79px;
+    background-color: $headTitleColor;
+}
+
+.rights {
+    @include fontStyle (16px, $mainTextColor: $footerTextColor);
+}
+
+.footer-logos {
+    @include flexFull;
+    gap: 7px;
+}
+
+.footer-logo {
+    @include flexFull;
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    transition: 0.3s;
+}
+
+.footer-logo:hover {
+    background-color: $mainColor;
+}
+
+.footer-logo:hover .footer-logo-sign {
+    fill: white;
+}

@@ -1,0 +1,37 @@
+.why {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #222224;
+    color: #FBFBFB;
+    padding: 104px 0;
+    gap: 30px;
+}
+
+.why_item {
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+}
+
+.why-icon {
+    width: 45px;
+    height: 40px;
+    display: flex;
+    align-content: center;
+    margin-bottom: 12px;
+}
+
+.why-title {
+    font-size: 19.96px;
+    font-weight: 400;
+}
+
+.why-text {
+    font-size: 13.972px;
+    font-weight: 300;
+    padding: 0 30px;
+}

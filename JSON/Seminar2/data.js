@@ -1,19 +1,20 @@
-const dataProducts = `
-[
-    {
-      "name": "MANGO PEOPLE T-SHIRTs",
-      "price": " $300",
-      "color": "Red",
-      "size": "Xl",
-      "quantity": 2    
-    },
-    {
-        "name": "ELLERY X M'O CAPSULEgggg",
-        "price": " $52",
-        "color": "Black",
-        "size": "Xl",
-        "quantity": 1   
-    }   
-    ]
-    `
+let dataProducts = `[
+  {
+  "img": "./Rectangle1.jpg",
+  "title": "MANGO PEOPLE T-SHIRT",
+  "price": "$300",
+  "color": "Red",
+  "size": "XL",
+  "quantity": "2"
+  },
+      {
+  "img": "./Rectangle2.jpg",
+  "title": "ELLERY XMO CAPSULE",
+  "price": "52",
+  "color": "Black",
+  "size": "XL",
+  "quantity": "1"
+  }
+  ]`
+
 

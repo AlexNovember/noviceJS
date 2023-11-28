@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+}
+
+input {
+    outline: none;
+}
+
+.center {
+    padding-left: calc(50vw - 570px);
+    padding-right: calc(50vw - 570px);
+}
+
+.center_top {
+    padding: 0 calc(50vw - 800px);
+}
+
+p {
+    font-style: normal;
+    line-height: normal;
+}
+
+summary {
+    user-select: none;
+    list-style: none;
+}
+
+.position {
+    margin: 0;
+}

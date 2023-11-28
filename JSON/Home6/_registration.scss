@@ -1,0 +1,109 @@
+::-webkit-input-placeholder {
+    @include fontStyle (13px, 300, $mainTextColor: #B1B1B1);
+}
+
+
+.reg_form {
+    display: flex;
+    justify-content: center;
+    gap: 128px;
+    padding-top: 64px;
+    padding-bottom: 96px;
+        
+    &-left {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+                
+        &-title {
+            @include fontStyle (16px, 300);
+        }
+
+        &-form {
+            box-sizing: border-box;
+            padding: 12px 17px 15px;
+            border: 1px solid #A4A4A4;
+            transition: 0.3s;
+
+            &:focus {
+                border-color: $mainColor;
+            }
+        }
+
+        &-radio {
+            display: flex;
+            gap: 10px;
+            padding: 11px 0 23px;
+            
+            &-button {
+                @include fontStyle (11px, 300);
+                padding-right: 10px;
+            }
+
+            .radio-other {
+                visibility: hidden;
+            }
+        }
+
+        &-login-title {
+            @include fontStyle (16px, 300);
+        }
+
+        &-rule {
+            @include fontStyle (13px, 300, $mainTextColor: #B1B1B1);
+        }
+
+        &-submit {
+            width: 167px;
+            box-sizing: border-box;
+            padding: 16px 20px;
+            margin-top: 39px;
+            background-color: $mainColor;
+            border: transparent;
+            @include fontStyle (14px, 300, $mainTextColor: #FFFFFF);
+            cursor: pointer;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: #f44d63;
+               
+            }   
+            
+            &:active {
+                transform: translateY(-3px);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            &-icon {
+                margin-left: 20px;
+            }
+        }
+    }
+}
+
+
+.reg_form-right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    
+    &-title {
+        @include fontStyle (24px, 300, $mainTextColor: #000000);
+        margin-bottom: 6px;
+    }
+
+    &-rule {
+        @include fontStyle (24px, 300, $mainTextColor: #000000);
+        margin-bottom: 5px;
+    }
+
+    &-text {
+     @include fontStyle(24px, 300, $mainTextColor:#000000);   
+    
+        &:before {
+        content: '\2714';
+        padding-right: 22px;
+        }
+    } 
+}
+

@@ -1,0 +1,55 @@
+@import 'vars';
+
+
+@mixin flexFull {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexIndexAbsolute {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin gridTable ($block: 2, $gradFraction: 1fr, $gap: 30px) {
+    display: grid;
+    grid-template-columns: repeat($block, $gradFraction);
+    gap: $gap;
+}
+
+@mixin fontStyle ($fontSize: 14px, $fontWeight: 400, $lineHeight: normal, $mainTextColor: #6F6E6E) {
+    font-size: $fontSize;
+    font-style: normal;
+    font-weight: $fontWeight;
+    line-height: $lineHeight;
+    color: $mainTextColor;
+}
+
+@mixin bigButtons {
+    color: $mainColor;
+
+    &:hover {
+        background-color: $mainColor;
+        stroke-width: 1px;
+        stroke: $mainColor;
+        transition: 0, 3s;
+        color: white;
+    }
+}
+
+@mixin checkboxHover {
+    // margin-bottom: 5px;
+    transition-duration: 0.3s;
+
+    &:hover {
+        @extend %filterButtonsEffects;
+    }
+
+    &:hover .description-sorting-menu-icon path {
+        fill: $mainColor;
+    }
+}
