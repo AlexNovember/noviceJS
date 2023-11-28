@@ -1,12 +1,10 @@
 'use strict';
 
 const data = JSON.parse(dataProducts);
-console.log(data);
 
 const itemElms = document.querySelector('.goods_section-index');
-console.log(itemElms);
 
-function creatItem(data) {
+function createItem(data) {
     data.forEach((item) => {
         contentEl.insertAdjacentHTML('beforeend', getCart(item.img, item.title, item.description, item.price))
     })
@@ -37,6 +35,6 @@ function getCart(img, title, description, price) {
 const contentEl = document.createElement("div");
 contentEl.classList.add("section_bottom");
 
-creatItem(JSON.parse(dataProducts));
+createItem(JSON.parse(dataProducts));
 
 itemElms.append(contentEl);
