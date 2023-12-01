@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>VideoPlayer</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="script.js" defer></script>
+		<script src=""></script>
+		?
+	</head>
+	<body>
+		<div class="video-container">
+			<div class="video-timer">
+				<div>Time: <span class="current-time">0</span></div>
+				<div>Duration: <span class="duration">0</span></div>
+			</div>
+			<div class="player">
+				<video
+					src="https://gbcdn.mrgcdn.ru/uploads/record/244474/attachment/ec650f00f8be6efec58c47e0cc18fc7a.mp4"
+					controls
+				></video>
+				<input type="range" class="timing" value="0" step="0.01" />
+			</div>
+			<div class="buttons">
+				<button class="play">
+					<img src="../MEDIA/icons8-видео-100.png" alt="" />Play
+				</button>
+				<!-- <button class="pause">Pause</button> -->
+			</div>
+			<!-- <i class="pause"></i> -->
+			<input type="range" class="volume" min="0" max="1" step="0.01" />
+		</div>
+		<div class="youtube">
+			<iframe
+				class="you"
+				width="640"
+				height="360"
+				src="https://www.youtube.com/embed/T_6YmYC69zY"
+				title="Объекты в TypeScript, создание, особенности. Объект как аргумент функции"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				allowfullscreen
+			></iframe>
+		</div>
+	</body>
+</html>

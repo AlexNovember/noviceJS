@@ -1,0 +1,70 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: black;
+}
+
+.video-container {
+	margin: 0 auto;
+	height: 100vh;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	/* justify-content: center; */
+	align-items: center;
+}
+
+.video-timer {
+	display: flex;
+	gap: 20px;
+	color: white;
+	padding: 20px 0 0 30px;
+}
+
+.player {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 30px 0 30px 0;
+	background-color: black;
+}
+
+video {
+	width: 50%;
+	transition: width 0.5s;
+}
+
+.timing {
+	padding-top: 20px;
+	width: 50%;
+}
+
+.buttons {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+
+button {
+	width: 100px;
+	height: 100px;
+}
+
+.volume {
+	/* position: absolute; */
+	bottom: 20px;
+	left: 25px;
+}
+
+.full {
+	width: 100%;
+}
+
+.you {
+	width: 200px;
+	height: 150px;
+}

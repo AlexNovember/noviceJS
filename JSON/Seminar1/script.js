@@ -1,25 +1,40 @@
 'use strict';
 
-const data = JSON.parse(dataInfo);
-console.log(data);
+let item = 'кофе';
+let count = 3;
+let price = 150;
+let message = `В вашем заказе: ${count} единицы товара "${item}" на общую сумму: ${count * price} рублей.`;
 
-const contentElm = document.querySelector('.content');
+function currency(strings, ...values) {
+    let result = strings[0];
+    values.forEach((value, i) => {
+        result += `${value} руб.` + strings[i + 1];
+    }); return result;
+}
 
-data.forEach(data => {
-    const imgElm = document.createElement('img');
-    const textElm = document.createElement('h1');
-    const rankElm = document.createElement('p');
-    imgElm.classList.add('pic');
-    contentElm.appendChild(imgElm);
-    rankElm.classList.add('rank');
-    contentElm.appendChild(textElm);
-    textElm.classList.add('text');
-    contentElm.appendChild(rankElm);
-    textElm.textContent = data.cards[1].value;
-    rankElm.textContent = data.cards[1].suit;
-    rankElm.style.color = "gteen";
-    imgElm.src = data.cards[1].images.png;
-});
+let messageTagged = currency`Каждая единица "${item}" стоит ${price}.`;
+console.log(messageTagged);
+
+// const data = JSON.parse(dataInfo);
+// console.log(data);
+
+// const contentElm = document.querySelector('.content');
+
+// data.forEach(data => {
+//     const imgElm = document.createElement('img');
+//     const textElm = document.createElement('h1');
+//     const rankElm = document.createElement('p');
+//     imgElm.classList.add('pic');
+//     contentElm.appendChild(imgElm);
+//     rankElm.classList.add('rank');
+//     contentElm.appendChild(textElm);
+//     textElm.classList.add('text');
+//     contentElm.appendChild(rankElm);
+//     textElm.textContent = data.cards[1].value;
+//     rankElm.textContent = data.cards[1].suit;
+//     rankElm.style.color = "gteen";
+//     imgElm.src = data.cards[1].images.png;
+// });
 
 
 
