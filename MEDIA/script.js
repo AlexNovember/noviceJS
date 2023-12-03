@@ -1,30 +1,73 @@
 'use strict';
 
 const playElm = document.querySelector('.play');
-// const pauseElm = document.querySelector('.pause');
+const pauseElm = document.querySelector('.pause');
+const speedUP = document.querySelector('.speed-up');
+const normalSpeed = document.querySelector('.speed-mormal');
+const slowSpeed = document.querySelector('.speed-slow');
 const videoElm = document.querySelector('video');
 const currentTimeElm = document.querySelector('.current-time');
 const timingElm = document.querySelector('.timing');
+const zoomElm = document.querySelector('.zoom');
 const volumeElm = document.querySelector('.volume');
 const durationElm = document.querySelector('.duration');
 
+const zoom = 1;
 
 playElm.addEventListener('click', () => {
-    videoElm.play()
-    pause();
-    playElm.innerHTML =
-        (playElm.innerHTML === 'Play') ? playElm.innerHTML = 'Pause' : playElm.innerHTML = 'Play';
+    videoElm.play();
 });
 
-// pauseElm.addEventListener('click', () => {
-//     videoElm.pause();
+
+// playElm.addEventListener('click', () => {
+//     videoElm.play()
+//     pause();
+//     playElm.innerHTML =
+//         (playElm.innerHTML === 'Play') ? playElm.innerHTML = 'Pause' : playElm.innerHTML = 'Play';
 // });
 
-videoElm.addEventListener('timeupdate', () => {
-    durationElm.textContent = getTimeFromSeconds(videoElm.duration.toFixed(1));
-    currentTimeElm.textContent = getTimeFromSeconds(videoElm.currentTime.toFixed(0));
-    timingElm.value = videoElm.currentTime / videoElm.duration * 100;
+pauseElm.addEventListener('click', () => {
+    videoElm.pause();
 });
+
+zoomElm.addEventListener('click', () => {
+    videoElm.requestFullscreen();
+
+});
+
+
+speedUP.addEventListener('click', () => {
+    videoElm.play();
+    videoElm.playbackRate = 2;
+});
+
+normalSpeed.addEventListener('click', () => {
+    videoElm.play();
+    videoElm.playbackRate = 1;
+});
+
+slowSpeed.addEventListener('click', () => {
+    videoElm.play();
+    videoElm.playbackRate = 0.5;
+});
+
+
+
+videoElm.addEventListener('timeupdate', () => {
+    durationElm.textContent = getTimeFromSeconds(videoElm.duration);
+    timer();
+
+});
+
+function timer(params) {
+    timingElm.value = videoElm.currentTime / videoElm.duration * 100;
+
+    let hours = Math.floor(videoElm.currentTime / 3600);
+    let minutes = Math.floor((videoElm.currentTime - hours * 3600) / 60);
+    let seconds = Math.floor(videoElm.currentTime % 60);
+
+    currentTimeElm.innerHTML = `${hours}:${minutes}:${seconds}`;
+}
 
 volumeElm.addEventListener('input', () => {
     videoElm.volume = volumeElm.value;
@@ -59,11 +102,12 @@ function pause() {
 }
 
 function getTimeFromSeconds(seconds) {
-    let hours = Math.trunc(seconds / 3600);
-    let minutes = ((seconds - hours * 3600) / 60).toFixed(0);
-    let sec = ((seconds - hours * 3600) - (minutes * 60)).toFixed(0);
-    return hours + ':' + minutes + ":" + sec;
+    let hours = Math.floor(seconds / 3600);
+    let minutes = Math.floor((seconds - hours * 3600) / 60);
+    let sec = Math.floor((seconds - hours * 3600) - (minutes * 60));
+    return `${hours}:${minutes}:${sec}`;
 };
+
 // class findSelector {
 //     constructor(selector) {
 //         this.findEl = document.querySelector(selector);

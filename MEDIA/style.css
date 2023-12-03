@@ -29,7 +29,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin: 30px 0 30px 0;
+	margin-bottom: 10px;
 	background-color: black;
 }
 
@@ -41,17 +41,22 @@ video {
 .timing {
 	padding-top: 20px;
 	width: 50%;
+	height: 2px;
 }
 
 .buttons {
 	display: flex;
 	gap: 10px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 button {
-	width: 100px;
-	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	height: 20px;
+	font-size: 10px;
 }
 
 .volume {
@@ -67,4 +72,8 @@ button {
 .you {
 	width: 200px;
 	height: 150px;
+}
+
+.current-time {
+	color: white;
 }
