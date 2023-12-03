@@ -15,13 +15,13 @@ body {
 	flex-direction: column;
 	/* justify-content: center; */
 	align-items: center;
+	justify-content: center;
 }
 
 .video-timer {
 	display: flex;
 	gap: 20px;
 	color: white;
-	padding: 20px 0 0 30px;
 }
 
 .player {
@@ -35,13 +35,27 @@ body {
 
 video {
 	width: 50%;
-	transition: width 0.5s;
+	/* transition: 0.3s ease-in; */
 }
 
 .timing {
 	padding-top: 20px;
 	width: 50%;
-	height: 2px;
+}
+
+.video-timer {
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.current-time,
+.time,
+.duration-text,
+.text {
+	color: white;
+	font-size: 14px;
 }
 
 .buttons {
@@ -60,9 +74,7 @@ button {
 }
 
 .volume {
-	/* position: absolute; */
-	bottom: 20px;
-	left: 25px;
+	margin-left: 100px;
 }
 
 .full {
@@ -72,8 +84,4 @@ button {
 .you {
 	width: 200px;
 	height: 150px;
-}
-
-.current-time {
-	color: white;
 }

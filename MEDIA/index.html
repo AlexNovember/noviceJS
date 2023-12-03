@@ -11,8 +11,10 @@
 	<body>
 		<div class="video-container">
 			<div class="video-timer">
-				<div>Time: <span class="current-time">0</span></div>
-				<div>Duration: <span class="duration">0</span></div>
+				<div class="time">Time: <span class="current-time">0</span></div>
+				<div class="duration-text">
+					Duration: <span class="duration">0</span>
+				</div>
 			</div>
 			<div class="player">
 				<video
@@ -26,10 +28,10 @@
 				<button class="speed-up">x2</button>
 				<button class="speed-mormal">x1</button>
 				<button class="speed-slow">x0.5</button>
-				<button class="zoom">zoom</button>
+				<button class="zoom">zoom</button
+				><input type="range" class="volume" min="0" max="1" step="0.01" />
 			</div>
 
-			<input type="range" class="volume" min="0" max="1" step="0.01" />
 			<!-- </div>
 		<div class="youtube">
 			<iframe

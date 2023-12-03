@@ -18,6 +18,13 @@ playElm.addEventListener('click', () => {
     videoElm.play();
 });
 
+videoElm.addEventListener('click', () => {
+    togglePlayback(videoElm);
+});
+
+function togglePlayback(video) {
+    (video.paused) ? video.play() : video.pause();
+}
 
 // playElm.addEventListener('click', () => {
 //     videoElm.play()
@@ -34,6 +41,7 @@ zoomElm.addEventListener('click', () => {
     videoElm.requestFullscreen();
 
 });
+
 
 
 speedUP.addEventListener('click', () => {
