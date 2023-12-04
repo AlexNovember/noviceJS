@@ -42,6 +42,8 @@ function handleRangeUpdate() {
 function handleProgress() {
     const percent = (video.currentTime / video.duration) * 100;
     progressBar.style.flexBasis = `${percent}%`;
+    getTimeFromSeconds(video.duration);
+    timer(progress.value);
 }
 
 function scrub(e) {
@@ -63,6 +65,25 @@ function addSpeedSlow(params) {
     video.play();
     video.playbackRate = 0.5;
 }
+
+function getTimeFromSeconds(seconds) {
+    let hours = Math.floor(seconds / 3600);
+    let minutes = Math.floor((seconds - hours * 3600) / 60);
+    let sec = Math.floor((seconds - hours * 3600) - (minutes * 60));
+    duration.innerHTML = `/ ${hours}:${minutes}:${sec}`;
+};
+
+function timer() {
+    let hours = Math.floor(video.currentTime / 3600);
+    let minutes = Math.floor((video.currentTime - hours * 3600) / 60);
+    let seconds = Math.floor(video.currentTime % 60);
+    currentTime.innerHTML = `${hours}:${minutes}:${seconds}`;
+    displayStatus = document.getElementById("displayStatus");
+    // displayStatus.innerHTML = `${hours}:${minutes}:${seconds}`;
+}
+
+
+
 
 /* Hook up the event listners */
 video.addEventListener("click", togglePlay);
@@ -88,31 +109,5 @@ progress.addEventListener("mouseup", () => mousedown = false);
 
 
 
-video.addEventListener('timeupdate', () => {
-    getTimeFromSeconds(video.duration);
-    timer(progress.value);
-});
 
 
-function getTimeFromSeconds(seconds) {
-    let hours = Math.floor(seconds / 3600);
-    let minutes = Math.floor((seconds - hours * 3600) / 60);
-    let sec = Math.floor((seconds - hours * 3600) - (minutes * 60));
-    duration.innerHTML = `/ ${hours}:${minutes}:${sec}`;
-};
-
-function timer(params) {
-    let hours = Math.floor(video.currentTime / 3600);
-    let minutes = Math.floor((video.currentTime - hours * 3600) / 60);
-    let seconds = Math.floor(video.currentTime % 60);
-    currentTime.innerHTML = `${hours}:${minutes}:${seconds}`;
-}
-
-function progressUpdate() {
-    // Устанавливаем позицию воспроизведения
-    progress.style.width = (video.currentTime / video.duration * 100) + "%";
-
-    // Заполняем текстовую надпись текущим значением
-    // displayStatus = document.getElementById("displayStatus");
-    progress.innerHTML = (Math.round(video.currentTime * 100) / 100) + " сек";
-}

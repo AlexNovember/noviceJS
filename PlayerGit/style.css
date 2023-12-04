@@ -71,7 +71,6 @@ body {
 	transform: translateY(100%) translateY(-5px);
 	transition: all 0.3s;
 	flex-wrap: wrap;
-
 	background: rgba(0, 0, 0, 10);
 }
 
@@ -108,6 +107,8 @@ body {
 	background: #ffc600;
 	flex: 0;
 	flex-basis: 0%;
+	text-align: end;
+	user-select: none;
 }
 
 /* unholy css to style input type="range" */
@@ -169,14 +170,14 @@ input[type="range"]::-moz-range-thumb {
 	justify-content: center;
 }
 
-.duration,
-.current-time {
-	color: white;
+/* .duration,
+.current-time {	
 	font-size: 14px;
 	margin-left: 10px;
 }
 
-#positionBar span {
-	display: inline-block;
-	margin-top: 5px;
-}
+#displayStatus {
+	color: black;
+	font-size: 14px;
+	text-align: center;
+} */
