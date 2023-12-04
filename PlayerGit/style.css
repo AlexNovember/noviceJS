@@ -170,13 +170,14 @@ input[type="range"]::-moz-range-thumb {
 	justify-content: center;
 }
 
-/* .duration,
-.current-time {	
+.duration,
+.current-time {
+	color: white;
 	font-size: 14px;
 	margin-left: 10px;
 }
 
-#displayStatus {
+/* #displayStatus {
 	color: black;
 	font-size: 14px;
 	text-align: center;

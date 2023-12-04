@@ -78,12 +78,9 @@ function timer() {
     let minutes = Math.floor((video.currentTime - hours * 3600) / 60);
     let seconds = Math.floor(video.currentTime % 60);
     currentTime.innerHTML = `${hours}:${minutes}:${seconds}`;
-    displayStatus = document.getElementById("displayStatus");
+    // displayStatus = document.getElementById("displayStatus");
     // displayStatus.innerHTML = `${hours}:${minutes}:${seconds}`;
 }
-
-
-
 
 /* Hook up the event listners */
 video.addEventListener("click", togglePlay);
