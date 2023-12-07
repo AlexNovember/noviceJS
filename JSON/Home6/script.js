@@ -4,31 +4,34 @@ const data = JSON.parse(dataProducts);
 
 const itemElms = document.querySelector('.goods_section-index');
 const regElm = document.querySelector('.why');
-
 const removeEl = document.querySelector('.register');
-
 removeEl.classList.add('hidden');
-
 
 const cardBox = document.createElement('section');
 cardBox.classList.add('card-box');
 document.body.insertBefore(cardBox, regElm);
+const cardBoxTitle = document.createElement('h2');
+cardBoxTitle.classList.add('card-title');
+cardBoxTitle.textContent = 'Cart Items';
+cardBox.append(cardBoxTitle);
+
+
+
 
 const card = document.querySelector('.card-box');
 
 
-
 function createItem(data) {
     data.forEach((item) => {
-        contentEl.insertAdjacentHTML('beforeend', getCart(item.img, item.title, item.description, item.price))
+        contentEl.insertAdjacentHTML('beforeend', getCart(item.id, item.img, item.title, item.description, item.price))
     })
 }
 
-function getCart(img, title, description, price) {
+function getCart(id, img, title, description, price) {
     return `
-    <div class="items_up">
+    <div class="items_up" data-id="${id}">
     <a
-        class="items_scr"
+        class="items_scr" "
         href="#"
         style="background-image: url(${img})"
     >
@@ -46,16 +49,17 @@ function getCart(img, title, description, price) {
 }
 
 
-const shoppingItem = `
+function getShopingItem(img, title, price, color, size) {
+    return `
         <div class="goods_in_cart-box">
             <div class="goods_in_cart-left-block">
                 <div class="goods_in_cart-left-block-items">
-                    <img class="goods_in_cart-left-block-img" src="img/bottom3.jpg" alt="man">
+                    <img class="goods_in_cart-left-block-img" src="${img}" alt="man">
                     <div class="goods_in_cart-left-block-item">
-                        <h3 class="goods_in_cart-left-block-item-name">MANGO PEOPLE T-SHIRT</h3><br>
-                        <p class="goods_in_cart-left-block-item-price">Price: <span>$300</span></p>
-                        <p class="goods_in_cart-left-block-item-color">Color: Red</p>
-                        <p class="goods_in_cart-left-block-item-color">Size: XL</p>
+                        <h3 class="goods_in_cart-left-block-item-name">${title}</h3><br>
+                        <p class="goods_in_cart-left-block-item-price">Price: <span>${price}</span></p>
+                        <p class="goods_in_cart-left-block-item-color">Color: ${color}</p>
+                        <p class="goods_in_cart-left-block-item-color">Size: ${size}</p>
                         <p class="goods_in_cart-left-block-item-quantity	">Quantity:<input
                                 class="goods_in_cart-left-block-item-quantity-input" type="number" step="1"
                                 placeholder="1" min="1">
@@ -63,47 +67,38 @@ const shoppingItem = `
                         <div class="closeModal"></div>
                     </div>
                 </div>`
+}
 
-
-
-
-
-
-
-
+function createCart(item) {
+    const shoppingItem = getShopingItem(item.img, item.title, item.price, item.color, item.size);
+    card.insertAdjacentHTML('beforeend', shoppingItem);
+}
 
 const contentEl = document.createElement("div");
 contentEl.classList.add("section_bottom");
-
 createItem(JSON.parse(dataProducts));
-
 itemElms.append(contentEl);
 
+const cardElms = document.querySelectorAll('.items_up');
 
-const cardElms = document.querySelectorAll('.items_scr');
-// cardElms.forEach(element => {
-//     let a = {};
-//     console.log(element.tagName);
-//     a = JSON.stringify(element);
-//     console.log(a);
+card.addEventListener('click', function (e) {
+    if (e.target.classList.value === 'closeModal') {
+        const deleteItem = e.target.closest('.goods_in_cart-box'); console.log(card.querySelectorAll.length);
+        deleteItem.remove();
 
-// });
+    }
+});
 
+cardElms.forEach((item) => {
+    item.addEventListener("click", (event) => {
+        event.preventDefault();
+        const id = event.currentTarget.dataset["id"];
+        const item = data.filter((item) => item["id"] === id)[0];
+        createCart(item);
+    })
 
-
-for (const element of cardElms) {
-    element.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        // element.classList.add('in-card')
-        const addGood = element.parentElement;
-
-        createCartBlock();
-    });
-};
+})
 
 
-function createCartBlock() {
-    card.insertAdjacentHTML('afterbegin', shoppingItem);
-}
+
 

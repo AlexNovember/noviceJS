@@ -1301,13 +1301,20 @@ input[type="text"]:focus {
 	display: none;
 }
 
-.card-box {
+/* .card-box {
 	display: flex;
 	flex-direction: column;
 	flex: auto;
 	gap: 15px;
-	margin: 30px;
-	margin-left: 50px;
+	padding: 20px;
+}
+
+.card-box:empty {
+	display: none;
+} */
+
+.hidden {
+	display: none;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
