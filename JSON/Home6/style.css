@@ -926,7 +926,7 @@ input[type="text"]:focus {
 	position: relative;
 	box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 252px 1fr;
 	transition: 0.3s;
 }
 .goods_in_cart-left-block-items:hover {
@@ -1301,20 +1301,28 @@ input[type="text"]:focus {
 	display: none;
 }
 
-/* .card-box {
+.card-box {
 	display: flex;
 	flex-direction: column;
 	flex: auto;
-	gap: 15px;
-	padding: 20px;
+	gap: 40px;
+	padding-bottom: 96px;
 }
 
 .card-box:empty {
 	display: none;
-} */
+}
 
 .hidden {
 	display: none;
+}
+
+.card-title {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	padding-top: 96px;
+	padding-bottom: 64px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {

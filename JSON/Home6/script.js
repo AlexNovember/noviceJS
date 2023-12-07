@@ -3,20 +3,17 @@
 const data = JSON.parse(dataProducts);
 
 const itemElms = document.querySelector('.goods_section-index');
-const regElm = document.querySelector('.why');
-const removeEl = document.querySelector('.register');
-removeEl.classList.add('hidden');
+const regElm = document.querySelector('.register');
 
 const cardBox = document.createElement('section');
 cardBox.classList.add('card-box');
+cardBox.classList.add('center');
 document.body.insertBefore(cardBox, regElm);
 const cardBoxTitle = document.createElement('h2');
 cardBoxTitle.classList.add('card-title');
 cardBoxTitle.textContent = 'Cart Items';
 cardBox.append(cardBoxTitle);
-
-
-
+cardBox.classList.add('hidden');
 
 const card = document.querySelector('.card-box');
 
@@ -70,6 +67,7 @@ function getShopingItem(img, title, price, color, size) {
 }
 
 function createCart(item) {
+    cardBox.classList.remove('hidden');
     const shoppingItem = getShopingItem(item.img, item.title, item.price, item.color, item.size);
     card.insertAdjacentHTML('beforeend', shoppingItem);
 }
@@ -85,7 +83,10 @@ card.addEventListener('click', function (e) {
     if (e.target.classList.value === 'closeModal') {
         const deleteItem = e.target.closest('.goods_in_cart-box'); console.log(card.querySelectorAll.length);
         deleteItem.remove();
-
+        console.log(document.querySelectorAll(".cart-box"))
+        if (document.querySelectorAll(".goods_in_cart-box").length === 0) {
+            cardBox.classList.add('hidden');
+        }
     }
 });
 
