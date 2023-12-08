@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function createItem(data) {
         data.forEach((item) => {
-            contentEl.insertAdjacentHTML('beforeend', getCart(item.id, item.img, item.title, item.description, item.price))
+            contentEl.insertAdjacentHTML('beforeend', getCart(item.id, item.img, item.title, item.description, item.price));
         })
     }
 
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (e.target.classList.value === 'closeModal') {
             const deleteItem = e.target.closest('.goods_in_cart-box'); console.log(card.querySelectorAll.length);
             deleteItem.remove();
-            console.log(document.querySelectorAll(".cart-box"))
+            console.log(document.querySelectorAll(".cart-box"));
             if (document.querySelectorAll(".goods_in_cart-box").length === 0) {
                 cardBox.classList.add('hidden');
             }
@@ -99,9 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
             const item = data.filter((item) => item["id"] === id)[0];
             createCart(item);
         })
-
     })
-
-
 })
 
