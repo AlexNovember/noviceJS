@@ -92,9 +92,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const cardElms = document.querySelectorAll('.items_up');
 
     cardElms.forEach((item) => {
-        item.addEventListener("click", (event) => {
-            event.preventDefault();
-            const id = event.currentTarget.dataset["id"];
+        item.addEventListener("click", (e) => {
+            e.preventDefault();
+            const id = e.currentTarget.dataset["id"];
             const item = data.filter((item) => item["id"] === id)[0];
             createShoppinCart(item);
         })
