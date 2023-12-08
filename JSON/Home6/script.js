@@ -1,31 +1,33 @@
 'use strict';
 
-const data = JSON.parse(dataProducts);
+document.addEventListener("DOMContentLoaded", function () {
 
-const itemElms = document.querySelector('.goods_section-index');
-const regElm = document.querySelector('.register');
+    const data = JSON.parse(dataProducts);
 
-const cardBox = document.createElement('section');
-cardBox.classList.add('card-box');
-cardBox.classList.add('center');
-document.body.insertBefore(cardBox, regElm);
-const cardBoxTitle = document.createElement('h2');
-cardBoxTitle.classList.add('card-title');
-cardBoxTitle.textContent = 'Cart Items';
-cardBox.append(cardBoxTitle);
-cardBox.classList.add('hidden');
+    const itemElms = document.querySelector('.goods_section-index');
+    const regElm = document.querySelector('.register');
 
-const card = document.querySelector('.card-box');
+    const cardBox = document.createElement('section');
+    cardBox.classList.add('card-box');
+    cardBox.classList.add('center');
+    document.body.insertBefore(cardBox, regElm);
+    const cardBoxTitle = document.createElement('h2');
+    cardBoxTitle.classList.add('card-title');
+    cardBoxTitle.textContent = 'Cart Items';
+    cardBox.append(cardBoxTitle);
+    cardBox.classList.add('hidden');
+
+    const card = document.querySelector('.card-box');
 
 
-function createItem(data) {
-    data.forEach((item) => {
-        contentEl.insertAdjacentHTML('beforeend', getCart(item.id, item.img, item.title, item.description, item.price))
-    })
-}
+    function createItem(data) {
+        data.forEach((item) => {
+            contentEl.insertAdjacentHTML('beforeend', getCart(item.id, item.img, item.title, item.description, item.price))
+        })
+    }
 
-function getCart(id, img, title, description, price) {
-    return `
+    function getCart(id, img, title, description, price) {
+        return `
     <div class="items_up" data-id="${id}">
     <a
         class="items_scr" "
@@ -43,11 +45,11 @@ function getCart(id, img, title, description, price) {
     </div>
 </div>
 `
-}
+    }
 
 
-function getShopingItem(img, title, price, color, size) {
-    return `
+    function getShopingItem(img, title, price, color, size) {
+        return `
         <div class="goods_in_cart-box">
             <div class="goods_in_cart-left-block">
                 <div class="goods_in_cart-left-block-items">
@@ -64,42 +66,42 @@ function getShopingItem(img, title, price, color, size) {
                         <div class="closeModal"></div>
                     </div>
                 </div>`
-}
-
-function createCart(item) {
-    cardBox.classList.remove('hidden');
-    const shoppingItem = getShopingItem(item.img, item.title, item.price, item.color, item.size);
-    card.insertAdjacentHTML('beforeend', shoppingItem);
-}
-
-const contentEl = document.createElement("div");
-contentEl.classList.add("section_bottom");
-createItem(JSON.parse(dataProducts));
-itemElms.append(contentEl);
-
-const cardElms = document.querySelectorAll('.items_up');
-
-card.addEventListener('click', function (e) {
-    if (e.target.classList.value === 'closeModal') {
-        const deleteItem = e.target.closest('.goods_in_cart-box'); console.log(card.querySelectorAll.length);
-        deleteItem.remove();
-        console.log(document.querySelectorAll(".cart-box"))
-        if (document.querySelectorAll(".goods_in_cart-box").length === 0) {
-            cardBox.classList.add('hidden');
-        }
     }
-});
 
-cardElms.forEach((item) => {
-    item.addEventListener("click", (event) => {
-        event.preventDefault();
-        const id = event.currentTarget.dataset["id"];
-        const item = data.filter((item) => item["id"] === id)[0];
-        createCart(item);
+    function createCart(item) {
+        cardBox.classList.remove('hidden');
+        const shoppingItem = getShopingItem(item.img, item.title, item.price, item.color, item.size);
+        card.insertAdjacentHTML('beforeend', shoppingItem);
+    }
+
+    const contentEl = document.createElement("div");
+    contentEl.classList.add("section_bottom");
+    createItem(JSON.parse(dataProducts));
+    itemElms.append(contentEl);
+
+    const cardElms = document.querySelectorAll('.items_up');
+
+    card.addEventListener('click', function (e) {
+        if (e.target.classList.value === 'closeModal') {
+            const deleteItem = e.target.closest('.goods_in_cart-box'); console.log(card.querySelectorAll.length);
+            deleteItem.remove();
+            console.log(document.querySelectorAll(".cart-box"))
+            if (document.querySelectorAll(".goods_in_cart-box").length === 0) {
+                cardBox.classList.add('hidden');
+            }
+        }
+    });
+
+    cardElms.forEach((item) => {
+        item.addEventListener("click", (event) => {
+            event.preventDefault();
+            const id = event.currentTarget.dataset["id"];
+            const item = data.filter((item) => item["id"] === id)[0];
+            createCart(item);
+        })
+
     })
 
+
 })
-
-
-
 
