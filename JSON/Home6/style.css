@@ -186,6 +186,7 @@ ul {
 	background-blend-mode: overlay;
 	height: 448px;
 	background-size: cover;
+	user-select: none;
 }
 
 .register_block {
