@@ -85,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
             deleteItem.remove();
             if (document.querySelectorAll(".goods_in_cart-box").length === 0) {
                 cardBox.classList.add('hidden');
+                card.removeEventListener('click', e);
             }
         }
     });
