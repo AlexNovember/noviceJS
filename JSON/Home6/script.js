@@ -22,11 +22,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function createItem(data) {
         data.forEach((item) => {
-            contentEl.insertAdjacentHTML('beforeend', getCart(item.id, item.img, item.title, item.description, item.price));
+            contentEl.insertAdjacentHTML('beforeend', createGoodsItem(item.id, item.img, item.title, item.description, item.price));
         })
     }
 
-    function getCart(id, img, title, description, price) {
+    function createGoodsItem(id, img, title, description, price) {
         return `
     <div class="items_up" data-id="${id}">
     <a
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>`
     }
 
-    function createCart(item) {
+    function createShoppinCart(item) {
         cardBox.classList.remove('hidden');
         const shoppingItem = getShopingItem(item.img, item.title, item.price, item.color, item.size);
         card.insertAdjacentHTML('beforeend', shoppingItem);
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
             const id = event.currentTarget.dataset["id"];
             const item = data.filter((item) => item["id"] === id)[0];
-            createCart(item);
+            createShoppinCart(item);
         })
     })
 })
