@@ -83,9 +83,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     card.addEventListener('click', function (e) {
         if (e.target.classList.value === 'closeModal') {
-            const deleteItem = e.target.closest('.goods_in_cart-box'); console.log(card.querySelectorAll.length);
+            const deleteItem = e.target.closest('.goods_in_cart-box');
             deleteItem.remove();
-            console.log(document.querySelectorAll(".cart-box"));
             if (document.querySelectorAll(".goods_in_cart-box").length === 0) {
                 cardBox.classList.add('hidden');
             }
