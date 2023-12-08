@@ -19,6 +19,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const card = document.querySelector('.card-box');
 
+    const contentEl = document.createElement("div");
+    contentEl.classList.add("section_bottom");
+    createItem(JSON.parse(dataProducts));
+    itemElms.append(contentEl);
+
 
     function createItem(data) {
         data.forEach((item) => {
@@ -74,13 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
         card.insertAdjacentHTML('beforeend', shoppingItem);
     }
 
-    const contentEl = document.createElement("div");
-    contentEl.classList.add("section_bottom");
-    createItem(JSON.parse(dataProducts));
-    itemElms.append(contentEl);
-
-    const cardElms = document.querySelectorAll('.items_up');
-
     card.addEventListener('click', function (e) {
         if (e.target.classList.value === 'closeModal') {
             const deleteItem = e.target.closest('.goods_in_cart-box');
@@ -90,6 +88,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
+
+    const cardElms = document.querySelectorAll('.items_up');
 
     cardElms.forEach((item) => {
         item.addEventListener("click", (event) => {
