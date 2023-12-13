@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:200");
+
+body {
+	background-image: url("https://visit-kaliningrad.ru/upload/iblock/d2b/Kurshskaya-kosa-_4_.jpg");
+	background-size: cover;
+	-webkit-animation: slidein 10s;
+	animation: slidein 100s;
+
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+
+	-webkit-animation-direction: alternate;
+	animation-direction: alternate;
+}
+
+@-webkit-keyframes slidein {
+	from {
+		background-position: top;
+		background-size: 2800px;
+	}
+	to {
+		background-position: -100px 0px;
+		background-size: 2000px;
+	}
+}
+
+@keyframes slidein {
+	from {
+		background-position: top;
+		background-size: 1800px;
+	}
+	to {
+		background-position: -100px 0px;
+		background-size: 1800px;
+	}
+}
+
+.center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(75, 75, 250, 0.3);
+	border-radius: 3px;
+}

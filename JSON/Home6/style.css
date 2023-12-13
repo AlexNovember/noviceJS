@@ -418,8 +418,6 @@ ul {
 
 .text_red {
 	color: #f16d7f;
-	font-size: 32px;
-	font-weight: 700;
 }
 
 .choice {
@@ -1387,7 +1385,7 @@ input[type="text"]:focus {
 	}
 	.bottom_text,
 	.text_red {
-		font-size: 24px;
+		font-size: 20px;
 	}
 	.hide-mobile {
 		display: none;

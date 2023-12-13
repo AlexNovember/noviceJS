@@ -1,17 +1,36 @@
 'use strict';
 
+
+
+
+
+
 if ('geolocation' in navigator) {
     console.log('Навигация доступна');
 } else {
     console.log('Навигация недоступна');
 }
 
-// navigator.geolocation.getCurrentPosition((position) => {
-//     console.log(position);
-//     const { latitude, longitude } = position.coords
-//     console.log('Географические координаты устройства',
-//         latitude, longitude)
-// })
+navigator.geolocation.getCurrentPosition((position) => {
+    console.log(position);
+    const { latitude, longitude } = position.coords
+    console.log(`Географические координаты устройства
+широта: ${latitude} 
+долгота: ${longitude}`)
+})
+
+const a = document.querySelector('div');
+const b = a.querySelectorAll('a')
+
+a.addEventListener('click', f1);
+
+function f1(event) {
+    event.preventDefault();
+    console.log(event.target);
+    b.forEach(item => {
+        console.log(item.target.tagName);
+    });
+}
 
 // let watchId = navigator.geolocation.watchPosition(({ coords }) => { console.log('Устройство обновило местоположение', coords.latitude, coords.longitude) })
 
@@ -47,12 +66,13 @@ if ('geolocation' in navigator) {
 //         default: console.log('Извините, местоположение недоступно', error)
 //             break
 //     }
-// } 
+// }
 
 
-const box = document.querySelector('#box')
-console.log(box.scrollTop, box.scrollLeft) // Устанавливаем количество прокрученных пикселей box.scrollTop =500
+// const box = document.querySelector('#box')
+// console.log(box.scrollTop, box.scrollLeft) // Устанавливаем количество прокрученных пикселей box.scrollTop =500
 
-window.scrollTo(0, 1000) // Этот код меняет поведение прокрутки на 
-// smooth 
-window.scrollTo({ top: 1000, behavior: 'smooth', })
+// window.scrollTo(0, 1000) // Этот код меняет поведение прокрутки на
+// // smooth
+// window.scrollTo({ top: 1000, behavior: 'smooth', })
+
