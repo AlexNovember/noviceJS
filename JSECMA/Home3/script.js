@@ -70,7 +70,7 @@ class Product {
 class Order {
     products;
 
-    constructor(orderNumber, products) {
+    constructor(orderNumber) {
         this.orderNumber = orderNumber;
         this.products = [];
     }
