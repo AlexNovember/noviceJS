@@ -85,7 +85,7 @@ class Order {
         });
         const sum = prices.reduce((acc, num) => {
             return acc + num;
-        }, 0);
+        });
         return sum;
     }
 }
