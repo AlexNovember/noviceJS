@@ -59,8 +59,6 @@ manager.displayInfo();
 // Метод addProduct(product) - принимает объект product и добавляет его в список продуктов заказа.
 // Метод getTotalPrice() - возвращает общую стоимость заказа, основанную на ценах продуктов.
 
-
-
 // Пример использования класса
 class Product {
     constructor(name, price) {
