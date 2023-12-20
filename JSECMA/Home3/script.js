@@ -38,6 +38,7 @@ Department: ${this.department}`);
 }
 
 // Пример использования классов
+console.log('Задание 1');
 const employee = new Employee("John Smith");
 employee.displayInfo();
 // Вывод:
@@ -50,7 +51,7 @@ manager.displayInfo();
 // Department: Sales
 
 
-// ""Управление списком заказов""
+// Задание 2: ""Управление списком заказов""
 
 // Реализуйте класс Order (заказ), который имеет следующие свойства и методы:
 
@@ -89,6 +90,8 @@ class Order {
         return sum;
     }
 }
+
+console.log('Задание 2');
 
 const order = new Order(12345);
 console.log(order);
