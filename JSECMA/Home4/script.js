@@ -3,34 +3,34 @@
 // Необходимо получить список всех пользователей с помощью бесплатного API (https://jsonplaceholder.typicode.com/users) и отобразить их на странице. Пользователь должен иметь возможность удалить любого пользователя из списка.
 
 
-// const url = 'https://jsonplaceholder.typicode.com/users';
-// const users = document.querySelector('.users');
+const url = 'https://jsonplaceholder.typicode.com/users';
+const users = document.querySelector('.users');
 
-// async function getData(url) {
-//     const res = await fetch(url);
-//     const data = await res.json();
-//     return data;
-// }
+async function getData(url) {
+    const res = await fetch(url);
+    const data = await res.json();
+    return data;
+}
 
-// try {
-//     const data = await getData(url);
-//     data.forEach(element => {
-//         users.insertAdjacentHTML('beforeend',
-//             `<div class="user">
-//             <p class='user-name'>${element.name}</p>
-//             <div class="close"></div>
-//             </div>
-//             `)
-//     });
-// } catch (error) {
-//     console.log('no connect')
-// }
+try {
+    const data = await getData(url);
+    data.forEach(element => {
+        users.insertAdjacentHTML('beforeend',
+            `<div class="user">
+            <p class='user-name'>${element.name}</p>
+            <div class="close"></div>
+            </div>
+            `)
+    });
+} catch (error) {
+    console.log('no connect')
+}
 
-// users.addEventListener("click", (event) => {
-//     if (event.target.classList.contains("close")) {
-//         event.target.parentNode.remove();
-//     }
-// });
+users.addEventListener("click", (event) => {
+    if (event.target.classList.contains("close")) {
+        event.target.parentNode.remove();
+    }
+});
 
 
 
@@ -48,10 +48,22 @@ async function getDogData(dogUrl) {
     return data;
 }
 
-try {
-    const data = await getDogData(dogUrl);
-    dogs.src = data.message;
-} catch (error) {
-    console.log('no connect')
-}
+let controller = new AbortController();
+let count = 0;
 
+setInterval(async function () {
+    try {
+        if (count < 10) {
+            const data = await getDogData(dogUrl);
+            dogs.src = data.message;
+            // dogs.setAttribute('loading', 'lazy');
+            count++;
+        }
+        else {
+            controller.abort();
+        }
+    }
+    catch (error) {
+        console.error('no connect')
+    }
+}, 3000)
