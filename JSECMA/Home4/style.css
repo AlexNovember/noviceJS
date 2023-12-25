@@ -5,6 +5,7 @@
 
 body {
 	margin: 30px;
+	background-color: rgb(255, 250, 250);
 }
 
 .users {
@@ -50,6 +51,8 @@ body {
 }
 
 img {
+	margin-top: 20px;
 	width: 600px;
 	height: 450px;
+	border-radius: 40px;
 }
