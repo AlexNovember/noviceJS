@@ -9,8 +9,9 @@ const server = http.createServer((req, res) => {
         res.writeHead(200, {
             'Content-Type': 'text/html; charset=UTF-8'
         });
-        res.write(`Просмотров Главная страница ${count()}`);
-        res.write('<h1>Главная</h1>');
+        res.write('<h1>Главная страница</h1>');
+        res.write(`Просмотров ${count()}`);
+        res.write('<br>')
         res.write('<a href="/">Главная</a>');
         res.write('<br>')
         res.write('<a href="/about">About</a>');
@@ -20,8 +21,9 @@ const server = http.createServer((req, res) => {
         res.writeHead(200, {
             'Content-Type': 'text/html; charset=UTF-8'
         });
-        res.write(`Просмотров About ${count2()}`);
-        res.write('<h1>About</h1>');
+        res.write('<h1>Страница About</h1>');
+        res.write(`Просмотров ${count2()}`);
+        res.write('<br>')
         res.write('<a href="/">Главная</a>');
         res.write('<br>')
         res.write('<a href="/about">About</a>');
@@ -31,8 +33,10 @@ const server = http.createServer((req, res) => {
         res.writeHead(404, {
             'Content-Type': 'text/html; charset=UTF-8'
         });
-        res.write(`Переходов 404 ${count3()}`);
-        res.end('<h1>Страница не найдена</h1>');
+        res.write('<h1>Страница не найдена</h1>');
+        res.write('<br>')
+        res.write(`Переходов ${count3()}`);
+        res.end();
 
     }
 
