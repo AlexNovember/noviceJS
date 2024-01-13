@@ -1,13 +1,25 @@
 'use strict';
 
-const divEl = document.createElement('div');
+// const divEl = document.createElement('div');
 
-fetch('https://catfact.ninja/fact')
+// async function a(params) {
+//     fetch('https://catfact.ninja/fact')
 
-    .then(response => response.json()) // Декодируем ответ в формате json
+//         .then(response => response.json()) // Декодируем ответ в формате json
 
-    .then(data => document.body.innerHTML = (data.fact));
+//         .then(data => document.body.innerHTML = (data.fact));
+// }
 
-setTimeout(function () {
-    location.reload();
-}, 3000);
+
+// setInterval(function () {
+//     a();
+// }, 3000);
+
+const b = 19;
+
+function a() {
+
+    console.log(b);
+}
+
+a();

@@ -17,7 +17,6 @@ try {
     const data = await getData(url);
     data.sort(byField('name')); //сортируем по имени
     data.forEach(element => {
-        ;
         users.insertAdjacentHTML('beforeend',
             `<div class="user">
             <p class='user-name'>${element.name}</p>
