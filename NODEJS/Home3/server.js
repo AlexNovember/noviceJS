@@ -4,7 +4,7 @@ const filePath = path.join(__dirname, 'count.json');
 const fs = require('fs');
 const app = express();
 
-app.use(express.static('static'));
+// app.use(express.static('static'));
 
 app.use((req, res, next) => {
     console.log('Поступил запрос', req.method, req.url);
