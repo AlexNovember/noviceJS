@@ -25,7 +25,7 @@ try {
             // `)
         })
         let n = element.url;
-        console.log(n);
+
 
 
     });

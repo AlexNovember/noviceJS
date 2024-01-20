@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "uuid": "^9.0.1"
+  },
+  "name": "nodejs",
+  "version": "1.0.0",
+  "main": "script.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node ./script.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
