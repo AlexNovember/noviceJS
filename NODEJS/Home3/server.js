@@ -22,11 +22,7 @@ app.get('/', (req, res) => {
     res.write('<br>');
     res.write('\n<a href="/about">About</a>');
 
-    const jsonData = JSON.parse(fs.readFileSync(filePath));
-    jsonData.name = req.url;
-    jsonData.count = countTimer;
-    const counterJSON = JSON.stringify(jsonData, null, 2);
-    fs.writeFileSync(filePath, counterJSON);
+    addJSON("name", "count", req.url, countTimer);
 });
 
 app.get('/about', (req, res) => {
@@ -40,11 +36,7 @@ app.get('/about', (req, res) => {
     res.write('<br>');
     res.write('\n<a href="/">Home</a>');
 
-    const jsonData = JSON.parse(fs.readFileSync(filePath));
-    jsonData.name2 = req.url;
-    jsonData.count2 = countTimer;
-    const counterJSON = JSON.stringify(jsonData, null, 2);
-    fs.writeFileSync(filePath, counterJSON);
+    addJSON("name2", "count2", req.url, countTimer);
 });
 
 const port = 3000;
@@ -64,3 +56,11 @@ function getCounter() {
 let count = getCounter();
 let count2 = getCounter();
 
+
+function addJSON(key, key2, url, timer) {
+    const jsonData = JSON.parse(fs.readFileSync(filePath));
+    jsonData[key] = url;
+    jsonData[key2] = timer;
+    const counterJSON = JSON.stringify(jsonData, null, 2);
+    fs.writeFileSync(filePath, counterJSON);
+}

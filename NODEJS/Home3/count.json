@@ -1,1 +1,6 @@
-{"name":"/","count":4,"name2":"/about","count2":4}
+{
+  "name": "/",
+  "count": 3,
+  "name2": "/about",
+  "count2": 3
+}
