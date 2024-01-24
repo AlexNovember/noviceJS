@@ -10,12 +10,12 @@ app.use(express.json);
 
 const schema = Joi.object({
     firstName: Joi.string()
-        .min(3)
+        .min(2)
         .max(30)
         .required(),
 
     secondName: Joi.string()
-        .min(3)
+        .min(2)
         .max(30)
         .required(),
 
