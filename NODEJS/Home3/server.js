@@ -38,7 +38,7 @@ app.listen(port, () => {
 function addJSON(key, key2, url) {
     const jsonData = JSON.parse(fs.readFileSync(filePath));
     jsonData[key] = url;
-    jsonData[key2] = ++jsonData[key2];
+    jsonData[key2]++;
     const counterJSON = JSON.stringify(jsonData, null, 2);
     fs.writeFileSync(filePath, counterJSON);
 }
