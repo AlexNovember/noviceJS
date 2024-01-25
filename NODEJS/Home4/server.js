@@ -6,44 +6,43 @@ const app = express();
 const Joi = require('joi');
 
 let uniqueID = 1;
-app.use(express.json);
 
-const schema = Joi.object({
-    firstName: Joi.string()
-        .min(2)
-        .max(30)
-        .required(),
+// const schema = Joi.object({
+//     firstName: Joi.string()
+//         .min(2)
+//         .max(30)
+//         .required(),
 
-    secondName: Joi.string()
-        .min(2)
-        .max(30)
-        .required(),
+//     secondName: Joi.string()
+//         .min(2)
+//         .max(30)
+//         .required(),
 
-    age: Joi.number()
-        .integer()
-        .min(1)
-        .required(),
+//     age: Joi.number()
+//         .integer()
+//         .min(1)
+//         .required(),
 
-    city: Joi.string()
-        .min(1)
-        .max(30)
-})
+//     city: Joi.string()
+//         .min(1)
+//         .max(30)
+// })
 
 app.get('/users', (req, res) => {
     res.send(fs.readFileSync(filePath));
+    console.log(res.send);
 });
 
-app.get('/users/id', (req, res) => {
+app.get('/users/:id', (req, res) => {
     const users = JSON.parse(fs.readFileSync(filePath));
-    const user = users.find((user) => user.id === parseInt(req.params.id));
+    const user = users.find((user) => user.id === Number(req.params.id));
 
-    if (id) {
-        res.send(user);
+    if (user) {
+        res.send({ user });
     } else {
         res.status(404);
         res.send({ user: null });
     };
-
 });
 
 app.post('/users', (req, res) => {
@@ -54,14 +53,13 @@ app.post('/users', (req, res) => {
     users.push({
         id: uniqueID,
         ...req.body
-    })
+    });
 
     fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
 
     res.send({
         id: uniqueID,
-    })
-
+    });
 });
 
 app.put('/users/:id', (req, res) => {
@@ -71,7 +69,7 @@ app.put('/users/:id', (req, res) => {
     }
 
     const users = JSON.parse(fs.readFileSync(filePath));
-    const user = users.find((user) => user.id === parseInt(req.params.id));
+    const user = users.find((user) => user.id === Number(req.params.id));
 
     if (user) {
         user.firstName = req.body.firstName;
@@ -90,7 +88,7 @@ app.put('/users/:id', (req, res) => {
 
 app.delete('/users/:id', (req, res) => {
     const users = JSON.parse(fs.readFileSync(filePath));
-    const user = users.find((user) => user.id === parseInt(req.params.id));
+    const user = users.find((user) => user.id === Number(req.params.id));
 
     if (user) {
         const userIndex = users.indexOf(user);
@@ -107,6 +105,7 @@ app.delete('/users/:id', (req, res) => {
 
 
 const port = 3000;
+
 
 app.listen(port, () => {
     console.log(`Сервер запущен на порту ${port}`);
