@@ -47,6 +47,7 @@ app.get('/users/:id', (req, res) => {
 });
 
 app.post('/users', (req, res) => {
+
     getValidate(req.body, res);
 
     uniqueID += 1;
@@ -118,5 +119,4 @@ function getValidate(req, res) {
     if (validateResult.error) {
         return res.status(404).send({ error: validateResult.error.details });
     }
-
 }
