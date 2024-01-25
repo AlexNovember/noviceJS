@@ -47,6 +47,11 @@ app.get('/users/:id', (req, res) => {
 });
 
 app.post('/users', (req, res) => {
+    const validateResult = schema.validate(req.body);
+    if (validateResult.error) {
+        return res.status(404).send({ error: validateResult.error.details });
+    }
+
     uniqueID += 1;
 
     const users = JSON.parse(fs.readFileSync(filePath));

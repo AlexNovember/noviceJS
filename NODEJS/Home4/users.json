@@ -12,5 +12,12 @@
     "lastName": "Ivanovcccc",
     "age": 27,
     "city": "Moscowccc"
+  },
+  {
+    "id": 2,
+    "firstName": "Alexc333",
+    "lastName": "Ivanovcccc",
+    "age": 27,
+    "city": "Moscowccc"
   }
 ]
