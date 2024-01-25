@@ -7,30 +7,29 @@ const Joi = require('joi');
 
 let uniqueID = 1;
 
-// const schema = Joi.object({
-//     firstName: Joi.string()
-//         .min(2)
-//         .max(30)
-//         .required(),
+const schema = Joi.object({
+    firstName: Joi.string()
+        .min(2)
+        .max(30)
+        .required(),
 
-//     secondName: Joi.string()
-//         .min(2)
-//         .max(30)
-//         .required(),
+    secondName: Joi.string()
+        .min(2)
+        .max(30)
+        .required(),
 
-//     age: Joi.number()
-//         .integer()
-//         .min(1)
-//         .required(),
+    age: Joi.number()
+        .integer()
+        .min(1)
+        .required(),
 
-//     city: Joi.string()
-//         .min(1)
-//         .max(30)
-// })
+    city: Joi.string()
+        .min(1)
+        .max(30)
+})
 
 app.get('/users', (req, res) => {
     res.send(fs.readFileSync(filePath));
-    console.log(res.send);
 });
 
 app.get('/users/:id', (req, res) => {
@@ -58,7 +57,7 @@ app.post('/users', (req, res) => {
     fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
 
     res.send({
-        id: uniqueID,
+        id: uniqueID
     });
 });
 
