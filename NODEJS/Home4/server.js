@@ -5,6 +5,8 @@ const fs = require('fs');
 const app = express();
 const Joi = require('joi');
 
+app.use(express.json());
+
 let uniqueID = 1;
 
 const schema = Joi.object({
