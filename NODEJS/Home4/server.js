@@ -15,7 +15,7 @@ const schema = Joi.object({
         .max(30)
         .required(),
 
-    secondName: Joi.string()
+    lastName: Joi.string()
         .min(2)
         .max(30)
         .required(),
@@ -67,7 +67,7 @@ app.post('/users', (req, res) => {
 app.put('/users/:id', (req, res) => {
     const validateResult = schema.validate(req.body);
     if (validateResult.error) {
-        return req.status(404).send({ error: validateResult.error.details });
+        return res.status(404).send({ error: validateResult.error.details });
     }
 
     const users = JSON.parse(fs.readFileSync(filePath));
