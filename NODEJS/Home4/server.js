@@ -47,10 +47,7 @@ app.get('/users/:id', (req, res) => {
 });
 
 app.post('/users', (req, res) => {
-    const validateResult = schema.validate(req.body);
-    if (validateResult.error) {
-        return res.status(404).send({ error: validateResult.error.details });
-    }
+    getValidate(req.body, res);
 
     uniqueID += 1;
 
@@ -70,10 +67,8 @@ app.post('/users', (req, res) => {
 
 
 app.put('/users/:id', (req, res) => {
-    const validateResult = schema.validate(req.body);
-    if (validateResult.error) {
-        return res.status(404).send({ error: validateResult.error.details });
-    }
+
+    getValidate(req.body, res);
 
     const users = JSON.parse(fs.readFileSync(filePath));
     const user = users.find((user) => user.id === Number(req.params.id));
@@ -117,3 +112,11 @@ const port = 3000;
 app.listen(port, () => {
     console.log(`Сервер запущен на порту ${port}`);
 });
+
+function getValidate(req, res) {
+    const validateResult = schema.validate(req);
+    if (validateResult.error) {
+        return res.status(404).send({ error: validateResult.error.details });
+    }
+
+}
