@@ -106,11 +106,11 @@ orders.forEach((order, client) => {
 });
 
 // Вывод информации о поварах и их специализации
-// chefsSpecialization.forEach((specialization, chef) => {
-//     console.log(`${chef} специализируется на: ${specialization}.`);
-// });
+chefsSpecialization.forEach((specialization, chef) => {
+    console.log(`${chef} специализируется на: ${specialization}.`);
+});
 
 // Вывод информации о блюдах и их поварах
-// dishesAndChefs.forEach((chef, dish) => {
-//     console.log(`Блюдо ${dish} готовит повар: ${chef}.`);
-// });
+dishesAndChefs.forEach((chef, dish) => {
+    console.log(`Блюдо ${dish} готовит повар: ${chef}.`);
+});
