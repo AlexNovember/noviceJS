@@ -43,7 +43,7 @@ let musicCollection = {
 console.log('Задание 1');
 
 for (const artist of musicCollection) {
-    console.log(`Альбом ${artist.title} Исполнитель ${artist.artist} Год выпуска ${artist.year}`)
+    console.log(`Альбом: ${artist.title}, Исполнитель: ${artist.artist}, Год выпуска: ${artist.year}`)
 }
 
 
@@ -106,11 +106,11 @@ orders.forEach((order, client) => {
 });
 
 // Вывод информации о поварах и их специализации
-chefsSpecialization.forEach((specialization, chef) => {
-    console.log(`${chef} специализируется на: ${specialization}.`);
-});
+// chefsSpecialization.forEach((specialization, chef) => {
+//     console.log(`${chef} специализируется на: ${specialization}.`);
+// });
 
 // Вывод информации о блюдах и их поварах
-dishesAndChefs.forEach((chef, dish) => {
-    console.log(`Блюдо ${dish} готовит повар: ${chef}.`);
-});
+// dishesAndChefs.forEach((chef, dish) => {
+//     console.log(`Блюдо ${dish} готовит повар: ${chef}.`);
+// });
