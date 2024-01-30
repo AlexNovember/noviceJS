@@ -1,0 +1,11 @@
+#reviews-container {
+	margin-top: 20px;
+}
+
+.rewiew {
+	border: 1px solid black;
+	padding: 5px;
+	word-wrap: break-word;
+	width: 380px;
+	margin: 5px 0 5px 0;
+}
