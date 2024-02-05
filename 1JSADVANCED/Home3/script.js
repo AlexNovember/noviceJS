@@ -35,13 +35,15 @@ function updateReviewsList() {
     productList.innerHTML = '';
     for (let i = 0; i < localStorage.length; i++) {
         const productName = localStorage.key(i);
-        const listItem = document.createElement('li');
-        listItem.classList.add(`review${i}`);
-        listItem.textContent = productName;
-        listItem.onclick = function () {
-            showReviews(this.textContent);
-        };
-        productList.appendChild(listItem);
+        const reviews = JSON.parse(localStorage.getItem(productName));
+        if (reviews.length > 0) {
+            const listItem = document.createElement('li');
+            listItem.textContent = productName;
+            listItem.onclick = function () {
+                showReviews(this.textContent);
+            };
+            productList.appendChild(listItem);
+        }
     }
 }
 
