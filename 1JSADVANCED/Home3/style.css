@@ -1,0 +1,36 @@
+input,
+textarea,
+button {
+	display: block;
+	margin-bottom: 10px;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+li {
+	margin-bottom: 10px;
+}
+
+.review {
+	font-size: larger;
+	font-weight: 400;
+}
+
+.reviews {
+	display: flex;
+	flex-direction: column;
+}
+
+.review-text {
+	font-style: italic;
+	width: 500px;
+	border: 1px solid black;
+	padding: 5px 10px;
+}
+
+button {
+	margin-top: 10px;
+}

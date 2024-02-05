@@ -15,19 +15,26 @@ async function getData(url) {
     return data;
 }
 
+
+
+// initialData.forEach(item => {
+//     item.reviews.forEach(review => {
+//         const reviewDiv = document.createElement('div');
+//         reviewDiv.classList.add('rewiew');
+//         reviewDiv.textContent = review.text;
+//         reviewsContainer.appendChild(reviewDiv);
+//     });
+// });
+
+
 try {
     const data = await getData(url);
     const newsCard = document.querySelectorAll('.news-card');
-    data.forEach(element => {
-        cardImg.forEach(element => {
-            element.src = n;
-            console.log(element.src);
-            // `)
+
+    data.forEach(item => {
+        item.forEach(elm => {
+            elm.src = element.url;
         })
-        let n = element.url;
-
-
-
     });
 
 
