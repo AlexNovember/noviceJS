@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2" defer></script>
+		<script src="script.js" defer></script>
+	</head>
+	<body>
+		<div id="app">
+			<h1>{{ message }}</h1>
+			<!-- <h2>{{ sayHello() }}</h2> -->
+			<button v-on:click="changeText">Click</button>
+			<button v-on:click="increase(5, $event)">Click {{ counter}}</button>
+			<p>{{ counter }}</p>
+			<h2 v-on:mousemove="mouseMove($event)">
+				mouse move {{ x }} - {{y}}
+				<span v-on:mousemove.stop>stop text</span>
+			</h2>
+			<p v-html="bigText"></p>
+			<h3 v-if="productAddInCart">Add to cart?</h3>
+			<h3 v-else="!productAddInCart">Added</h3>
+			<h3 v-show="productAddInCart">show</h3>
+			<button @click="productAddInCart = !productAddInCart">Add product</button>
+		</div>
+
+		<!-- <div id="app-2">
+			<span v-bind:title="message">
+				Наведи на меня курсор на пару секунд, чтобы увидеть динамически
+				связанное значение title!
+			</span>
+		</div> -->
+	</body>
+</html>

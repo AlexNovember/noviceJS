@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<!-- <script src="script.js" defer></script> -->
+		<script src="script.js" defer type="module"></script>
+
+		<style>
+			#photo-container {
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			.photo {
+				flex: 1 1 calc(33.33% - 20px);
+				margin: 10px;
+				border: 1px solid #ccc;
+				box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+				overflow: hidden;
+			}
+
+			.photo img {
+				width: 100%;
+				height: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- <select name="select">
+			<option value="">Выбирите чтоб не было пусто</option>
+			<option value="Электроника">Электроника</option>
+			<option value="Бытовая техника">Бытовая техника</option>
+			<option value="Книги">Книги</option>
+			<option value="Одежда">Одежда</option>
+			<option value="Мебель">Мебель</option>
+		</select>
+
+		<ul class="list-product"></ul> -->
+
+		<div id="photo-container"></div>
+	</body>
+</html>
