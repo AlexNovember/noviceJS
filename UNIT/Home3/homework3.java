@@ -24,9 +24,6 @@ public class NumberUtilsTest {
 
 // Задание 2: Тесты для метода numberInInterval
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-
 public class NumberUtilsTest {
 
     @Test
@@ -52,8 +49,6 @@ public class NumberUtilsTest {
 
 // Задание 3: Добавление функции в класс UserRepository и ее тестирование
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 public class UserRepositoryTest {
 
