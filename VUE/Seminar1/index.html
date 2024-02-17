@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="https://cdn.jsdelivr.net/npm/vue@2" defer></script>
+		<script src="script.js" defer></script>
+	</head>
+	<body>
+		<div id="app">
+			<p>Товаров в корзине {{ counter }}</p>
+			<button
+				v-for="button in buttons"
+				:key="button.id"
+				@click="buyItem(button)"
+			>
+				{{ button.text }}
+			</button>
+		</div>
+
+		<div id="app2">
+			<button @click="allowOrder">Мне исполнилось 14 лет</button>
+			<button @click="disallowOrder">Мне еще нет 14 лет</button>
+			<p v-if="canOrder">{{ status }}</p>
+			<p v-else="canOrder">{{ status }}</p>
+		</div>
+
+		<div id="demo">
+			<button v-on:click="show = !show">Переключить</button>
+			<transition name="fade">
+				<p v-if="!show">Показать еще</p>
+			</transition>
+		</div>
+
+		<div id="random">
+			<button @click="random">Генерируй</button>
+			<p v-if="number < 5">{{number}} меньше 5</p>
+			<p v-if="number >= 5 && number <=9">{{number}} от 5 до 9</p>
+			<p v-if="number === 10">{{number}} равно 10</p>
+		</div>
+
+		<!-- <div id="app">
+			<h1>{{ message }}</h1>
+			<h2>{{ sayHello() }}</h2> -->
+		<!-- <button v-on:click="changeText">Click</button>
+			<button v-on:click="increase(5, $event)">Click {{ counter}}</button>
+			<p>{{ counter }}</p>
+			<h2 v-on:mousemove="mouseMove($event)">
+				mouse move {{ x }} - {{y}}
+				<span v-on:mousemove.stop>stop text</span>
+			</h2>
+			<p v-html="bigText"></p>
+			<h3 v-if="productAddInCart">Add to cart?</h3>
+			<h3 v-else="!productAddInCart">Added</h3>
+			<h3 v-show="productAddInCart">show</h3>
+			<button @click="productAddInCart = !productAddInCart">Add product</button> -->
+		<!-- </div> -->
+
+		<!-- <div id="app-2">
+			<span v-bind:title="message">
+				Наведи на меня курсор на пару секунд, чтобы увидеть динамически
+				связанное значение title!
+			</span>
+		</div> -->
+	</body>
+</html>

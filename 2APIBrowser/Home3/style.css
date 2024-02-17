@@ -1,64 +1,21 @@
 * {
-	box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-
-body {
-	background-color: gray;
-}
-
 img {
-	max-width: 100%;
+height: 200px;
 }
-
-img[data-src] {
-	opacity: 0;
-	transition: opacity 0.3s;
+svg {
+    width: 15px;
+    height: 15px;
 }
-
-img.lazy-loaded {
-	opacity: 1;
+p {
+    display: flex;
 }
-
-.center {
-	margin: 0 auto;
-}
-
-.image-container {
-	width: 90vw;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
-#unsplash-image {
-	width: 500px;
-	height: 80vh;
-	border: 1px solid white;
-}
-
-#like-button {
-	border: none;
-	font-size: 20px;
-}
-
-p,
-span {
-	color: white;
-	font-size: 20px;
-}
-
-.liked {
-	background-color: red;
-	color: white;
-	font-size: 20px;
-	border: none;
-}
-
-span {
-	margin-left: 10px;
-}
-
-.image-info {
-	text-align: center;
+#photo-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-around;
 }
