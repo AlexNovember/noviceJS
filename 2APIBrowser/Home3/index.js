@@ -18,7 +18,7 @@ const refresh_token = "goPQ9GJSE_NHD4VW-XwYsmMaVMbkO6CayWfZAKdCEPs";
 const scope = "public read_user write_user read_photos write_photos write_likes write_followers read_collections write_collections";
 const created_at = 1708023283;
 const user_id = 10848739;
-const username = "mavrinsergey";
+const username = "mavrinsergey"; я
 
 
 let checkedLikes = false;
@@ -53,7 +53,7 @@ btnNextEl.addEventListener("click", async function () {
 
 
 const likeEl = document.querySelector(".like");
-likeEl.addEventListener("click", async ({target}) => {
+likeEl.addEventListener("click", async ({ target }) => {
     const fatherEl = target.closest(".photo");
     const likesNumEl = fatherEl.querySelector(".like-number");
     const id = fatherEl.dataset.id;
@@ -81,7 +81,7 @@ async function generateDataForRender() {
         localStorage.setItem('historyPhoto', JSON.stringify(historyPhoto.history));
         render(photoData);
     } catch
-        (err) {
+    (err) {
         alert(err);
     }
 }

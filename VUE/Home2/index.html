@@ -9,16 +9,14 @@
 	</head>
 	<body>
 		<div id="app">
-			<button @click="reverseText">{{ buttonText }}</button>
+			<h1>Список</h1>
+			<button @click="sortByPrice('asc')">Сортировка по возрастанию</button>
+			<button @click="sortByPrice('desc')">Сортировка по убыванию</button>
 			<ul>
-				<li
-					v-for="(item, index) in list"
-					:key="index"
-					@click="removeItem(index)">
-					{{ item }}
+				<li v-for="product in sortedProducts" :key="product.id">
+					{{ product.name }} - ${{ product.price }}
 				</li>
 			</ul>
-			<button @click="addItem">Добавить</button>
 		</div>
 	</body>
 </html>
