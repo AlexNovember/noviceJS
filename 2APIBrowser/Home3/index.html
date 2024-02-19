@@ -1,20 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div id="photo-container"></div>
-<button id="prev">Предыдущая фото</button>
-<button id="next">Следующая фото</button>
-
-
-<script src="index.js" type="module"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="script.js" defer type="module"></script>
+	</head>
+	<body>
+		<div id="app">
+			<div id="photoContainer">
+				<img id="photo" src=" " alt="Random Photo" />
+				<div id="photoInfo">
+					<h2 id="photographerName"></h2>
+					<button id="likeButton">Like</button>
+					<span id="likeCount">0</span>
+				</div>
+			</div>
+			<button id="prevButton">Previous Photo</button>
+			<button id="nextButton">Next Photo</button>
+		</div>
+	</body>
 </html>
