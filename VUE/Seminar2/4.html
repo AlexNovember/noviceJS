@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <form @submit="addContact">
+        <label for="firstName">Имя:</label>
+        <input type="text" id="firstName" v-model="newContact.firstName">
+    
+        <label for="lastName">Фамилия:</label>
+        <input type="text" id="lastName" v-model="newContact.lastName">
+    
+        <label for="email">Email:</label>
+        <input type="email" id="email" v-model="newContact.email">
+    
+        <button type="submit">Добавить контакт</button>
+      </form>
+    
+      <ul>
+        <li v-for="contact in contacts" :key="contact.email">
+          {{ contact.firstName }} {{ contact.lastName }} - {{ contact.email }}
+        </li>
+      </ul>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          newContact: {
+            firstName: '',
+            lastName: '',
+            email: ''
+          },
+          contacts: []
+        },
+        methods: {
+          addContact: function(event) {
+            event.preventDefault();
+            if (this.isValidContact()) {
+              this.contacts.push({
+                firstName: this.newContact.firstName,
+                lastName: this.newContact.lastName,
+                email: this.newContact.email
+              });
+              this.resetForm();
+            }
+          },
+          isValidContact: function() {
+            return (
+              this.newContact.firstName.trim() !== '' &&
+              this.newContact.lastName.trim() !== '' &&
+              this.newContact.email.trim() !== ''
+            );
+          },
+          resetForm: function() {
+            this.newContact.firstName = '';
+            this.newContact.lastName = '';
+            this.newContact.email = '';
+          }
+        }
+      });
+    </script>
+
+   
+  </body>
+  </html>

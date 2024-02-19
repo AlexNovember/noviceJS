@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="products">
+        <div class="product" v-for="item in products" :key="item.id">
+          <input min="1" type="number" v-model="item.quantity">
+          <input type="checkbox" name="" id="" v-model="item.bought">
+          <span class="name">{{item.name}}</span>
+          {{item.bought}} - {{item.quantity}}
+        </div>
+    </div>
+    
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          products: [
+            { id: 1, name: 'Молоко', quantity: 2, bought: false },
+            { id: 2, name: 'Хлеб', quantity: 1, bought: true },
+            { id: 3, name: 'Яблоки', quantity: 5, bought: false },
+            { id: 4, name: 'Мясо', quantity: 0, bought: false }
+          ]
+        }
+      });
+    
+    </script>
+   
+  </body>
+  </html>

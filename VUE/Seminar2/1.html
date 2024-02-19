@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ product.name }}</h1>
+      <span>Price: {{ product.price }}</span>
+      <img :src="product.imageUrl" alt="Product Image">
+      <button @click="updatePrice">Получить скидку</button>
+    </div>
+    
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          product: {
+            name: 'Product 1',
+            price: 100,
+            imageUrl: 'https://example.com/product1.jpg'
+          }
+        },
+        methods: {
+          updatePrice: function() {
+            let random = parseInt(Math.random() * 20);
+            this.product.price = this.product.price - this.product.price * random / 100;
+          }
+        }
+      });
+    </script>
+   
+  </body>
+  </html>

@@ -4,14 +4,19 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
-		<script src="https://cdn.jsdelivr.net/npm/vue@2" defer></script>
+		<link rel="stylesheet" href="style.css" />
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js" defer></script>
 		<script src="script.js" defer></script>
 	</head>
 	<body>
 		<div id="app">
-			<h1>Список</h1>
-			<button @click="sortByPrice('asc')">Сортировка по возрастанию</button>
-			<button @click="sortByPrice('desc')">Сортировка по убыванию</button>
+			<h1>Список товаров</h1>
+			<button @click="sortByPrice('asc')">
+				По возрастанию <span class="arrow-up"></span>
+			</button>
+			<button @click="sortByPrice('desc')">
+				По убыванию <span class="arrow-down"></span>
+			</button>
 			<ul>
 				<li v-for="product in sortedProducts" :key="product.id">
 					{{ product.name }} - ${{ product.price }}

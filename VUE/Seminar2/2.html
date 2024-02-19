@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="user in users" :key="user.id">
+          {{ user.name }} - {{ user.age }} лет
+        </li>
+      </ul>
+    </div>
+    
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          users: [
+            { id: 1, name: 'Иван', age: 25 },
+            { id: 2, name: 'Мария', age: 30 },
+            { id: 3, name: 'Алексей', age: 35 },
+            { id: 4, name: 'Елена', age: 28 }
+          ]
+        }
+      });
+    </script>
+    </script>
+   
+  </body>
+  </html>
