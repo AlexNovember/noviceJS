@@ -4,6 +4,7 @@
 
 body {
 	background-color: gray;
+	margin: 0 auto;
 }
 
 .app {
@@ -12,4 +13,29 @@ body {
 
 img {
 	max-width: 100%;
+}
+
+#photoContainer {
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+#photo {
+	width: 400px;
+	height: 400px;
+}
+
+.buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 40px;
+}
+
+.photo__info {
+	text-align: center;
+	padding-bottom: 10px;
 }
