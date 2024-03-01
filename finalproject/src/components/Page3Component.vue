@@ -60,7 +60,8 @@
       <div class="page3__right">
         <h3 class="page3__tags">Tags</h3>
         <div class="tags__wrap">          
-          <button class="tag" v-for="(tag, index) in tags" :key="index" @click="selectTag(tag)">{{ tag.name }}</button>
+          <button class="tag" v-for="(tag, index) in tags" :key="index" @click="selectTag(tag)" 
+          v-class="{active: isActive}">{{ tag.name }}</button>
         </div>
         <div class="other-articles">          
           <ArticlesComponent v-for="article in sortedArticles" :key="article.id" :article="article"/>
@@ -76,11 +77,12 @@ import ArticlesComponent from '@/components/ArticlesComponent.vue';
 
 export default {
   name: "page3Component",
-  props: ['articles'], // Assuming the list of articles is passed as prop
+  props: ['articles'],
   
   data() {
     return {
       selectedTag: '',
+      isActive: false,
       tags: [
         {name: 'Kitchen'},
         {name: 'Bedroom'},
@@ -102,8 +104,9 @@ export default {
   computed: {
     sortedArticles() {
       if (this.selectedTag === '') {
-        return this.articles;
-      } else {
+        return this.articles 
+      } 
+      else {
         return this.articles.filter(article => this.containsTag(article));
       }
     },
