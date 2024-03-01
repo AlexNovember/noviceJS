@@ -60,8 +60,7 @@
       <div class="page3__right">
         <h3 class="page3__tags">Tags</h3>
         <div class="tags__wrap">          
-          <button class="tag" v-for="(tag, index) in tags" :key="index" @click="selectTag(tag)" 
-          v-class="{active: isActive}">{{ tag.name }}</button>
+          <button class="tag" v-for="(tag, index) in tags" :key="index" @click="selectTag(tag)">{{ tag.name }}</button>
         </div>
         <div class="other-articles">          
           <ArticlesComponent v-for="article in sortedArticles" :key="article.id" :article="article"/>
@@ -81,8 +80,7 @@ export default {
   
   data() {
     return {
-      selectedTag: '',
-      isActive: false,
+      selectedTag: '',      
       tags: [
         {name: 'Kitchen'},
         {name: 'Bedroom'},
