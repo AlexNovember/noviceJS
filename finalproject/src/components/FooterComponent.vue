@@ -43,6 +43,7 @@ export default {
   max-width: 1200px;
   display: flex;
   gap: 101px;
+  padding-top: 96px;
 }
 .footer__text {
   margin-bottom: 31px;
