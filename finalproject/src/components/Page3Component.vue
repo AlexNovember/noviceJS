@@ -166,18 +166,19 @@ export default {
   padding: 9px 30px;
   border-radius: 10px;
   border: none;
-  background-color: $colorPrimary2;
+  background-color: #F4F0EC;
   font-family: jost;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 125%;
-  color: white;
+  color: black;
   cursor: pointer;
 }
 
 .tag:focus {
   background-color: gray;
+  color: white;
 }
 
 .page3__title {
