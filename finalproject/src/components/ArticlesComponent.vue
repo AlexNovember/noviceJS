@@ -42,6 +42,11 @@ export default {
   border-radius: 62px;
   box-shadow: 0 10px 30px 0 rgba(255, 255, 255, 0.25);
 
+  &:hover {
+    background-color: rgb(255, 250, 250);
+  }
+
+
   &__img {
     border-radius: 45px 45px 0 0;
   }
@@ -69,6 +74,9 @@ export default {
 
   &__arrow {
     width: 52px;
+    cursor: pointer;    
+    }
   }
-}
+
+
 </style>

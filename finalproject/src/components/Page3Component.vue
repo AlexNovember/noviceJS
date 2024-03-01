@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="center">
     <div class="banner">
     <img class="banner__img" src="@/assets/img/page3_Banner.jpeg" alt="banner">
   </div>
@@ -64,8 +64,7 @@
         </div>
         <div class="other-articles">          
           <ArticlesComponent v-for="article in sortedArticles" :key="article.id" :article="article"/>
-        </div>
-      
+        </div> 
       </div>
     </div>
   </section>
@@ -118,8 +117,13 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/scss-modules/variables";
+
+.center {
+  padding-left: calc(50vw - 800px);
+  padding-right: calc(50vw - 800px);
+}
 .page3 {
-  margin: 0 auto 60px;
+  margin: 0 auto;
   display: flex;
   gap: 57px;
   max-width: 1200px;
@@ -127,10 +131,12 @@ export default {
 
 .banner {
   display: flex;
-  justify-content: center;
+  justify-content: center;  
 }
 .banner__img {
   margin-bottom: 200px;
+  background-size: cover;
+  overflow: hidden;
 }
 
 .page3__left {
@@ -145,13 +151,14 @@ export default {
   font-style: normal;
   font-weight: 400;
   line-height: 125%;
-  cursor: pointer;
+  cursor: pointer;  
 }
 
 .tags__wrap {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: 20px;
 }
 
 .tag {
@@ -260,5 +267,11 @@ li::before {
   font-size: 20px;
   font-weight: 400;
   line-height: 125%;
+}
+
+.other-articles {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 </style>
