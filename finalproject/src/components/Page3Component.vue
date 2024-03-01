@@ -177,7 +177,7 @@ export default {
 }
 
 .tag:focus {
-  background-color: gray;
+  background-color: #292F36;
   color: white;
 }
 
