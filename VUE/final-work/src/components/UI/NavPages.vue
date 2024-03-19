@@ -9,6 +9,9 @@
     <router-link class="header__link" to="/blog">
       Blog
     </router-link>
+    <router-link class="header__link" to="/helloworld">
+      About (404)
+    </router-link>
   </nav>
 </template>
 

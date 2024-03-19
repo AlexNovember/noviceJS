@@ -36,17 +36,19 @@ export default {
   },
   methods: {
     prevSlide() {
-      if (this.currentSlideIndex > 0) {
-        this.currentSlideIndex--
-      }
-    },
+  if (this.currentSlideIndex === 0) {
+    this.currentSlideIndex = this.sliderItems.length - 1
+  } else {
+    this.currentSlideIndex--
+  }
+},
     nextSlide() {
-      if (this.currentSlideIndex === this.sliderItems.length - 1) {
-        this.currentSlideIndex = 0
-      } else {
-        this.currentSlideIndex++
-      }
-    }
+  if (this.currentSlideIndex === this.sliderItems.length - 1) {
+    this.currentSlideIndex = 0
+  } else {
+    this.currentSlideIndex++
+  }
+}
   }
 }
 </script>
@@ -60,9 +62,20 @@ export default {
   overflow: hidden;
 }
 
-.carousel {
+.wrap__btn {
   display: flex;
+  gap: 10px;  
+  justify-content: center;
+}
+
+.btn:hover {
+  background-color: darkgray;
+}
+.carousel {
+  display: flex;  
+  align-items: center;
   transition: all ease 0.5s;
+  overflow: hidden;    
 }
 
 </style>

@@ -20,5 +20,11 @@ export default {
 
 
 <style scoped lang="scss">
+.carousel-item {
+  text-align: -webkit-center;
+}
 
+img {  
+  object-fit: cover;	
+}
 </style>
