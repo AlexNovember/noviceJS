@@ -1,0 +1,101 @@
+.main__banner {
+    /* background-image: url(/wp-content/themes/Ecomobil/assets/images/main-banner.webp); */
+    position: relative;
+}
+
+/* .banner__video {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    object-fit: none;
+} */
+
+.home .articles-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.main__articles.articles__list_new {
+    margin-bottom: 0;
+    padding-top: 105px;
+    padding-bottom: 30px;
+    background: linear-gradient(221.72deg, rgb(255, 255, 255) 1.784%, rgba(255, 255, 255, 0) 117.765%);
+
+}
+
+.main__articles .articles__title {
+    margin-bottom: 41px;
+    line-height: 100%;
+}
+
+.main__articles.articles__list_new .articles__item {
+    min-height: 480px;
+}
+
+.main__articles .articles__list {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.main__articles .articles__list::before {
+    display: none;
+}
+
+.main__btn {
+    margin-top: 31px;
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__btn_dark,
+.main__btn_dark .btn__inner span {
+    color: #000;
+}
+
+.main__btn_dark .btn__inner svg {
+    stroke: #000;
+}
+
+@media(max-width: 999px) {
+    .main__articles-box {
+        margin-bottom: 0;
+    }
+
+    .main__articles-box .btn {
+        margin-top: 20px;
+    }
+
+    .main__articles.articles__list_new {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .main__articles.articles__list_new .articles__item {
+        max-height: 270px;
+    }
+
+    .main__articles .articles__item-descr {
+        min-height: 109px;
+        padding: 20px;
+    }
+
+}
+
+@media(max-width: 640px) {
+    .main__articles.articles__list_new {
+        padding-top: 48px;
+        padding-bottom: 48px;
+        background: var(--Lin, linear-gradient(257deg, #FFF 0.48%, rgba(255, 255, 255, 0.00) 109.86%));
+    }
+
+    .main__articles.articles__list_new .articles__item {
+        max-height: 428px;
+    }
+
+    .main__articles .articles__title {
+        font-size: 24px;
+        margin-bottom: 26px;
+    }
+}

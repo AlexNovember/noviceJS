@@ -1,0 +1,480 @@
+.request {
+    position: relative;
+    padding: 77px 0;
+    background: rgb(0, 0, 0);
+    overflow: hidden;
+}
+
+
+.request_light {
+    padding: 53px 0 77px;
+    background: linear-gradient(43.62deg, rgb(255, 255, 255) 30.153%, rgba(255, 255, 255, 0) 111.846%);
+}
+
+
+.request__img-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-width: 720px;
+}
+
+.request_light .request__img-box {
+    left: auto;
+    top: auto;
+    right: 0;
+    bottom: 38px;
+    max-height: 556px;
+    max-width: 1089px;
+}
+
+.request__img {
+    display: block;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+}
+
+.request__container {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 40px;
+    max-width: 1140px;
+}
+
+.request_dark .request__right {
+    order: -1;
+}
+
+.error-box {
+    font-size: 14px;
+    height: 20px;
+}
+
+.request_light .error-box p {
+    color: #181818;
+}
+
+.request__left,
+.request__right {
+    position: relative;
+    width: 100%;
+    max-width: 495px;
+}
+
+
+.request__left {
+    max-width: 460px;
+}
+
+.request__left .logo__box {
+    display: none;
+}
+
+.request__right .logo__box {
+    display: block;
+    margin-top: 41px;
+
+}
+
+.request__right .logo__link {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.request__right .logo__box .logo__img {
+    width: 100%;
+    max-width: 292px;
+}
+
+
+
+.request__descr {
+    position: relative;
+    text-align: right;
+    padding: 31px 23px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 120%;
+    z-index: 10;
+}
+
+
+.form {
+    max-width: 460px;
+    width: 100%;
+}
+
+.form__title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 120%;
+}
+
+
+.form__box {
+    position: relative;
+    z-index: 1;
+    padding: 44px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 54px;
+    gap: 17px;
+    border-radius: 20px;
+    box-shadow: 6px 6px 12px 0px rgb(131, 124, 117);
+    background: linear-gradient(226.30deg, rgb(255, 255, 255) 4.821%, rgba(255, 255, 255, 0) 115.075%);
+}
+
+.request_light .form__box {
+    box-shadow: 8px 8px 12px 0px rgba(81, 81, 81, 0.92);
+    background: linear-gradient(225.25deg, rgba(93, 89, 89, 0.97) 6.292%, rgba(120, 113, 113, 0.59) 53.886%, rgba(99, 95, 95, 0.27) 89.761%, rgba(255, 255, 255, 0) 118.403%);
+}
+
+.form__item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form__item label {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.form__item input {
+    min-height: 78px;
+    padding-left: 28px;
+    box-sizing: border-box;
+    border: 4px solid rgba(255, 255, 255, 0.29);
+    border-radius: 20px;
+    background: rgb(32, 32, 32);
+    color: rgba(184, 192, 199, .3);
+    ;
+    font-size: 12px;
+    line-height: 150%;
+
+}
+
+.form__btn .btn-border,
+.form__btn {
+    width: 100%;
+}
+
+.request__descr .btn-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.request .btn-border rect,
+.form__btn .btn-border rect,
+.popup__btn .btn-border rect {
+    stroke-dasharray: 1200;
+
+}
+
+.form__btn:hover .btn-border rect {
+    animation: btnFormBorderAnimation 2s ease-in-out infinite
+}
+
+.popup {
+    cursor: pointer;
+    visibility: hidden;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180.00deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, .8) 119.92%);
+    z-index: 10000;
+}
+
+.popup_visible {
+    animation: .6s fadeIn;
+    animation-fill-mode: forwards;
+    visibility: visible;
+}
+
+.popup__box {
+    width: 100%;
+    max-width: 920px;
+    padding: 60px 60px;
+    background: rgb(24, 24, 24);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup__icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 30px;
+}
+
+.popup__text {
+    max-width: 503px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    line-height: 120%;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.popup__span {
+    margin-bottom: 60px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 120%;
+    text-align: center;
+}
+
+.popup__btn {
+    width: 100%;
+    max-width: 460px;
+}
+
+@keyframes btnFormBorderAnimation {
+    0% {
+        stroke-dashoffset: 2400;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@media(max-width:999px) {
+    .request {
+        padding-top: 39px;
+        padding-bottom: 40px;
+
+    }
+
+    .request__img-box {
+        left: -43%;
+    }
+
+    .request__container {
+        padding: 0 16px;
+        max-width: 640px;
+
+    }
+
+    .request__left {
+        max-width: 293px;
+    }
+
+    .request__right {
+        max-width: 238px;
+    }
+
+    .form__box {
+        padding: 44px 16px;
+        margin-bottom: 0;
+    }
+
+    .form__item input {
+        min-height: 60px;
+    }
+
+    .request__right .logo__box,
+    .request__descr {
+        display: none;
+    }
+
+    .request__img-box {
+        bottom: 83px;
+        right: -274px;
+    }
+
+    .form {
+        position: relative;
+    }
+
+    .request_light .form__btn {
+        position: absolute;
+        bottom: 20px;
+        right: -314px;
+        z-index: 10;
+    }
+
+    .request_dark .request__right .logo__box {
+        display: block;
+        margin-bottom: 41px;
+    }
+
+    .request_dark .request__right .logo__box .logo__img {
+        width: 100%;
+        max-width: 292px;
+    }
+
+    .popup__box {
+        max-width: 728px;
+    }
+
+}
+
+@media(max-width: 640px) {
+    .request {
+        padding-bottom: 203px;
+        padding-top: 48px;
+    }
+
+    .request__img-box {
+        bottom: 0;
+        top: initial;
+        left: 0;
+        max-height: 341px;
+        max-width: 100%
+    }
+
+    .request__img {
+        max-height: 341px;
+    }
+
+    .request__container {
+        flex-direction: column;
+        align-items: center;
+        gap: 48px;
+    }
+
+    .request_light {
+        background: linear-gradient(18deg, #FFF 38.32%, rgba(255, 255, 255, 0.00) 76.39%);
+    }
+
+    .request__left,
+    .request__right {
+        flex-grow: 1;
+        max-width: 360px;
+    }
+
+    .request__descr {
+        font-size: 16px;
+        line-height: 140%;
+        padding: 15px 14px;
+    }
+
+
+    .form__box {
+        margin-bottom: 32px;
+    }
+
+    .request_light .form__btn {
+        position: relative;
+        right: auto;
+        bottom: auto;
+
+    }
+
+    .request__descr .btn-border rect {
+        rx: 20px;
+        ry: 20px;
+    }
+
+    .request__img-box {
+        aspect-ratio: auto;
+        max-height: 240px;
+        right: 0;
+        bottom: 12px;
+    }
+
+    .request__img {
+        max-height: 240px;
+    }
+
+    .form__box {
+        padding: 22px 15px;
+    }
+
+    .form__title {
+        font-size: 20px;
+    }
+
+    .form__item label {
+        font-size: 12px;
+    }
+
+    .form__item input {
+        min-height: 50px;
+        padding-left: 25px;
+        border-radius: 15px;
+
+    }
+
+    .form__btn,
+    .form__btn .btn-border {
+        height: 40px;
+    }
+
+    .request__right .logo__box {
+        display: none;
+    }
+
+    .request__left .logo__box {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .request__left .logo__box {
+        display: none;
+    }
+
+    .request__right {
+        display: flex;
+        flex-direction: column;
+        order: -1;
+
+    }
+
+    .request__right .logo__box {
+        margin-top: 0;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .request__descr {
+        display: block;
+        order: 1;
+    }
+
+    .request__left .logo__box .logo__img {
+        max-width: 292px;
+        width: 100%;
+    }
+
+    .popup__box {
+        padding: 80px 30px 74px;
+        max-width: 360px;
+    }
+
+    .popup__icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .popup__text {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .popup__span {
+        font-size: 20px;
+        margin-bottom: 69px;
+    }
+
+}

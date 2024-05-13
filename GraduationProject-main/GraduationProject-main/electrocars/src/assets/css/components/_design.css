@@ -1,0 +1,287 @@
+.design__item {
+    padding-top: 75px;
+    background: linear-gradient(to right, #80808094, white);
+}
+
+
+.design__container {
+    margin-bottom: 0;
+    padding-bottom: 75px;
+}
+
+.design__title {
+    font-size: 40px;
+    font-weight: 400;
+    padding-bottom: 40px;
+}
+
+.tab {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.design__item .btn {
+    width: 270px;
+}
+
+.btn__container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn__container-2 {
+    align-self: flex-end;
+}
+
+.tab__btn {
+    margin-top: 0;
+    width: 270px;
+    height: 53px;
+    font-size: 24px;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    color: #4c4c4c;
+
+}
+
+.tab__btn .btn-border {
+    width: 100%;
+    height: 100%;
+}
+
+.tab__btn:hover,
+.tab__btn.active {
+    background-image: linear-gradient(to right, gray, black) !important;
+    color: white;
+}
+
+.tab-content:disabled {
+    background-image: none;
+    cursor: not-allowed;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+
+.tab__content__block {
+    display: flex;
+    height: 500px;
+
+}
+
+.photo-container {
+    height: 100%;
+}
+
+.photo-container.grouped {
+    display: flex;
+    flex-direction: column;
+    width: 483px;
+}
+
+.grouped-photo {
+    height: 50%;
+}
+
+.grouped-box {
+    display: flex;
+    height: 50%;
+}
+
+.grouped-box .grouped-photo {
+    height: 100%;
+}
+
+.photo-container img,
+.grouped-photo img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+
+}
+
+.grouped-box .grouped-photo:first-child {
+    width: 291px;
+}
+
+.grouped-box .grouped-photo:last-child {
+    width: 192px;
+}
+
+.img__tab {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.img__tab:hover {
+    cursor: pointer;
+}
+
+@media(max-width: 999px) {
+    .design__item {
+        padding-top: 40px;
+    }
+
+    .design__container {
+        padding-bottom: 20px;
+    }
+
+    .design__title {
+        padding-bottom: 20px;
+    }
+
+    .tab {
+        gap: 20px;
+    }
+
+    .tab-content {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .design__item .btn {
+        width: 100%;
+        max-width: 189px;
+    }
+
+    .photo-container {
+        height: 189px;
+        width: calc(100% / 3);
+    }
+
+    .grouped-photo,
+    .grouped-box {
+        height: 192px;
+        width: 100%;
+        /* position: relative; */
+    }
+
+    .grouped-box {
+        position: absolute;
+        left: 0;
+        top: 192px;
+        justify-content: flex-end;
+        width: 608px;
+    }
+
+    .grouped-box .grouped-photo:last-child {
+        width: calc(100% / 3);
+    }
+
+    .grouped-box .grouped-photo:first-child {
+        /* position: absolute; */
+        width: calc((100% / 3)*2);
+    }
+
+    .photo-container.grouped {
+        height: 384px;
+        width: calc((100% / 3)*2);
+    }
+
+    .tab-content.active {
+        gap: 20px;
+    }
+
+    .tab__content__block {
+        flex-direction: column;
+        max-height: 384px;
+        flex-wrap: wrap;
+    }
+}
+
+@media(max-width: 640px) {
+    .design__item {
+        padding-top: 48px;
+    }
+
+    .design__container {
+        padding-bottom: 26px;
+    }
+
+    .design__title {
+        padding-bottom: 26px;
+        font-size: 24px;
+    }
+
+    .btn__container-tab {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .tab {
+        gap: 26px;
+    }
+
+    .tab__btn {
+        height: 30px;
+        font-size: 12px;
+        line-height: 120%;
+        justify-content: flex-start;
+        padding-left: 20px;
+
+    }
+
+    .design__item .btn {
+        width: 144px;
+        height: 28px;
+        font-weight: bold;
+    }
+
+    .photo-container {
+        width: 100%;
+        min-height: 251px;
+    }
+
+    .tab__content__block {
+        min-height: 568px;
+        flex-wrap: nowrap;
+    }
+
+    .tab-content.active {
+        gap: 32px;
+    }
+
+    .photo-container.grouped {
+        width: 100%;
+        height: 351px;
+    }
+
+    .grouped-photo {
+        height: 181px;
+    }
+
+    .grouped-box {
+        position: initial;
+        width: 100%;
+        order: -1;
+        height: 136px;
+    }
+
+    .grouped-box .grouped-photo:first-child,
+    .grouped-box .grouped-photo:last-child {
+
+        width: 50%;
+    }
+
+    .design__item .btn .icon-arrow_forward {
+        margin-left: 8px;
+    }
+}

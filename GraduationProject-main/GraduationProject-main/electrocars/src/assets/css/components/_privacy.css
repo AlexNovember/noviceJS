@@ -1,0 +1,90 @@
+.privacy {
+    height: 100%;
+    background: linear-gradient(46.99deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 103.235%);
+}
+
+.privacy__container {
+    margin-bottom: 0;
+}
+
+.privacy__title {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 100%;
+    margin-bottom: 40px;
+}
+
+.privacy__content {
+    padding-bottom: 100px;
+}
+
+.privacy__content ol {
+    counter-reset: li;
+    list-style: none;
+    content: counters(li, ".") " ";
+}
+
+.privacy__content>ul {
+    list-style: none;
+}
+
+.privacy__content li {
+    font-size: 24px;
+    line-height: 120%;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+.privacy__content li>ol {
+    margin-top: 20px;
+}
+
+.privacy__content li li {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.privacy__content ol>li::before {
+    margin-right: 16px;
+    counter-increment: li;
+    content: counters(li, ".") ".";
+}
+
+.privacy__content ol>li>ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.privacy__content ol>li>ul>li::before {
+    content: "\2014";
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.privacy__content a {
+    color: #D9FF3F;
+}
+
+.privacy__content a:hover {
+    text-decoration: underline;
+}
+
+.privacy__content table,
+.article__text table {
+    margin-top: 20px;
+    font-size: 16px;
+    border: 2px solid #fff;
+    border-collapse: collapse
+}
+
+.privacy__content table td,
+.article__text table td {
+    border: 1px solid #fff;
+    padding: 16px 20px;
+    vertical-align: top;
+}
+
+.privacy__content table ul,
+.article__text table ul {
+    list-style: inside;
+}

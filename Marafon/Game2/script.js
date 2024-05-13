@@ -61,6 +61,12 @@ function finishGame(params) {
   // timeEl.parentNode.remove;
   timeEl.parentNode.classList.add("hide");
   board.innerHTML = `<h1>Cчет: <span class='primary'>${score}</span></h1>`;
+  // preventDefault();
+//  const finishButton = board.createElement('button');
+//  finishButton.setAttribute('type', 'button');
+// finishButton.classList.add('btn');
+// finishButton.textContent = 'Нажми меня';
+// document.body.append(finishButton);
 }
 
 function createRandomCircle(params) {

@@ -1,0 +1,143 @@
+.brands__banner {
+	position: relative;
+}
+
+.brands {
+	padding-top: 77px;
+	margin-bottom: 215px;
+}
+
+.brands__name {
+	margin-top: -10px;
+	font-size: 40px;
+	line-height: 100%;
+	font-weight: 400;
+	position: relative;
+}
+
+.brands__main-descr {
+	padding-top: 50px;
+	margin-bottom: 77px;
+	text-align: center;
+	line-height: 120%;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.brands__main-descr p {
+	margin-bottom: 20px;
+}
+
+.brands__list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	column-gap: 20px;
+	row-gap: 25px;
+	list-style-type: none;
+	margin-bottom: 83px;
+}
+
+.brands__item {
+	position: relative;
+	overflow: hidden;
+	height: 268px;
+}
+
+.brands__item:hover .brands__item-descr {
+	right: -100%;
+}
+
+.brands__item-img,
+.brands__item img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.brands__item-descr {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 32px 40px;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		rgba(0, 0, 0, 0.59) -11.053%,
+		rgba(0, 0, 0, 0.3) 37.106%
+	);
+	transition: right 0.6s ease-out;
+}
+
+.brands__item-title {
+	display: flex;
+	align-items: center;
+	font-size: 32px;
+	font-weight: 500;
+	line-height: 120%;
+}
+
+/* 
+.brands__item-title .icon-arrow_forward {
+    opacity: 0;
+    height: 25px;
+}
+
+.brands__item:hover .icon-arrow_forward {
+    opacity: 1;
+    animation: arrowForwardBrands 2s ease-in-out infinite;
+} */
+
+@media (max-width: 999px) {
+	.brands {
+		/* padding-top: 80px; */
+		margin-bottom: 140px;
+	}
+
+	.brands__name span {
+		display: block;
+		max-width: 325px;
+	}
+
+	.brands__main-descr {
+		margin-bottom: 40px;
+		margin-top: -40px;
+	}
+
+	.brands__list {
+		margin-bottom: 40px;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	}
+
+	.brands__item-descr {
+		padding: 32px;
+	}
+}
+
+@media (max-width: 640px) {
+	.brands {
+		/* padding-top: 80px; */
+		margin-bottom: 48px;
+	}
+
+	.brands__list {
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	}
+
+	.brands__item {
+		height: 240px;
+	}
+
+	.brands__item-title {
+		font-size: 20px;
+	}
+
+	.brands__name span {
+		font-size: 20px;
+	}
+
+	.brands__main-descr {
+		margin-bottom: 32px;
+		margin-top: -48px;
+	}
+}
